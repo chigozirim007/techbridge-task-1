@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <rect width="100" height="100" rx="20" fill="#080A12"/>
+  <rect width="92" height="92" x="4" y="4" rx="16" fill="none" stroke="#10D000" stroke-width="2"/>
+  
+  <g transform="translate(26, 16)">
+    <!-- Spine Bar -->
+    <line x1="20" y1="10" x2="20" y2="60" stroke="#2B38F0" stroke-width="7" stroke-linecap="round"/>
+    
+    <!-- Top Branch -->
+    <path d="M 20 22 C 32 22, 34 16, 40 16" fill="none" stroke="#2B38F0" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="45" cy="16" r="5" fill="#2B38F0"/>
+
+    <!-- Middle Branch -->
+    <line x1="5" y1="35" x2="40" y2="35" stroke="#10D000" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="47" cy="35" r="7" fill="#10D000"/>
+
+    <!-- Bottom Branch -->
+    <path d="M 20 48 C 32 48, 34 54, 40 54" fill="none" stroke="#2B38F0" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="45" cy="54" r="5" fill="#2B38F0"/>
+  </g>
+</svg>
