@@ -1,47 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 110" width="100%" height="100%">
-  <defs>
-    <linearGradient id="tb-green-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#16D600"/>
-      <stop offset="100%" stop-color="#10D000"/>
-    </linearGradient>
-    <linearGradient id="tb-blue-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#2B38F0"/>
-      <stop offset="100%" stop-color="#1E25C7"/>
-    </linearGradient>
-    <filter id="glow-green" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 90" width="100%" height="100%">
+  <style>
+    .tech-text { font-family: 'Plus Jakarta Sans', Arial, sans-serif; font-weight: 800; font-size: 52px; fill: #10D000; letter-spacing: 0px; }
+    .bridge-text { font-family: 'Plus Jakarta Sans', Arial, sans-serif; font-weight: 800; font-size: 52px; fill: #12169C; letter-spacing: 0px; }
+  </style>
 
-  <!-- Brand Typography -->
-  <g transform="translate(10, 50)">
-    <!-- TECH in Lime Green -->
-    <text x="0" y="0" font-family="'Plus Jakarta Sans', 'Inter', Arial, sans-serif" font-weight="900" font-size="44" fill="#10D000" letter-spacing="1">TECH</text>
-    <!-- BRIDGE in Deep Blue -->
-    <text x="135" y="0" font-family="'Plus Jakarta Sans', 'Inter', Arial, sans-serif" font-weight="900" font-size="44" fill="#2B38F0" letter-spacing="1">BRIDGE</text>
-  </g>
+  <!-- TECH in Lime Green -->
+  <text x="0" y="60" class="tech-text">TECH</text>
 
-  <!-- Official TechBridge Circuit Emblem (Right Side) -->
-  <g transform="translate(450, 18)">
-    <!-- Vertical Spine Bar -->
-    <line x1="15" y1="5" x2="15" y2="65" stroke="#2B38F0" stroke-width="7" stroke-linecap="round"/>
+  <!-- BRIDGE in Deep Blue -->
+  <text x="145" y="60" class="bridge-text">BRIDGE</text>
+
+  <!-- Emblem Icon (Right) -->
+  <g transform="translate(445, 10)">
+    <!-- Vertical Spine Line in Deep Blue -->
+    <line x1="20" y1="5" x2="20" y2="65" stroke="#12169C" stroke-width="6" stroke-linecap="round"/>
     
-    <!-- Top Branch & Node (Deep Blue) -->
-    <path d="M 15 18 C 30 18, 32 12, 38 12" fill="none" stroke="#2B38F0" stroke-width="5" stroke-linecap="round"/>
-    <circle cx="42" cy="12" r="5" fill="#2B38F0"/>
+    <!-- Top Branch & Circle in Deep Blue -->
+    <path d="M 20 20 L 35 20 L 35 12" fill="none" stroke="#12169C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="35" cy="12" r="5" fill="#12169C"/>
 
-    <!-- Middle Main Branch & Node (Lime Green Glow) -->
-    <line x1="2" y1="35" x2="38" y2="35" stroke="#10D000" stroke-width="6" stroke-linecap="round" filter="url(#glow-green)"/>
-    <circle cx="42" cy="35" r="7" fill="#10D000" filter="url(#glow-green)"/>
+    <!-- Middle Branch & Circle in Lime Green -->
+    <line x1="5" y1="35" x2="38" y2="35" stroke="#10D000" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="43" cy="35" r="7" fill="#10D000"/>
 
-    <!-- Bottom Branch & Node (Deep Blue) -->
-    <path d="M 15 52 C 30 52, 32 58, 38 58" fill="none" stroke="#2B38F0" stroke-width="5" stroke-linecap="round"/>
-    <circle cx="42" cy="58" r="5" fill="#2B38F0"/>
-  </g>
-
-  <!-- Subtitle Attribution -->
-  <g transform="translate(12, 85)">
-    <text x="0" y="0" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="12" fill="#94A3B8" letter-spacing="2.5">BY BASELINK SERVICES LIMITED</text>
+    <!-- Bottom Branch & Circle in Deep Blue -->
+    <path d="M 20 50 L 35 50 L 35 58" fill="none" stroke="#12169C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="35" cy="58" r="5" fill="#12169C"/>
   </g>
 </svg>
