@@ -3,7 +3,7 @@
    Organization: TechBridge by Baselink Services Limited
    Tagline: Bridging Learning to Real-World Experience
    Official Colors: Lime Green (#10D000) & Deep Royal Blue (#2B38F0)
-   Tech Stack: HTML5 + CSS3 (Pure Vanilla)
+   Tech Stack: 100% Pure HTML5 + CSS3 (Zero JavaScript)
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -245,7 +245,7 @@ button, input {
 }
 
 /* --------------------------------------------------------------------------
-   5. Header & Navigation Bar
+   5. Header & Navigation Bar (Pure CSS Checkbox Toggle)
    -------------------------------------------------------------------------- */
 .header {
   position: fixed;
@@ -266,6 +266,7 @@ button, input {
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  position: relative;
 }
 
 .logo-link {
@@ -300,7 +301,7 @@ button, input {
   padding: 0.5rem 0;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover {
   color: var(--text-primary);
 }
 
@@ -316,7 +317,7 @@ button, input {
   border-radius: var(--radius-full);
 }
 
-.nav-link:hover::after, .nav-link.active::after {
+.nav-link:hover::after {
   width: 100%;
 }
 
@@ -326,7 +327,11 @@ button, input {
   gap: 1rem;
 }
 
-/* Mobile Toggle Hamburger */
+/* Pure CSS Checkbox Toggle for Mobile Navigation */
+.nav-toggle-checkbox {
+  display: none;
+}
+
 .mobile-toggle {
   display: none;
   flex-direction: column;
@@ -469,7 +474,7 @@ button, input {
   font-weight: 500;
 }
 
-/* HERO ANIMATED GRAPHIC CARD (RIGHT COLUMN) */
+/* HERO ANIMATED GRAPHIC CARD */
 .hero-visual {
   position: relative;
 }
@@ -884,7 +889,7 @@ button, input {
 }
 
 /* --------------------------------------------------------------------------
-   12. FAQ Section
+   12. FAQ Section (Pure HTML5 <details> & <summary> Styling)
    -------------------------------------------------------------------------- */
 .faq-section {
   padding: 5rem 0;
@@ -898,7 +903,7 @@ button, input {
   gap: 1rem;
 }
 
-.faq-item {
+details.faq-item {
   background: var(--bg-card);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
@@ -906,8 +911,19 @@ button, input {
   transition: var(--transition-fast);
 }
 
-.faq-item:hover {
+details.faq-item:hover {
   border-color: rgba(16, 208, 0, 0.3);
+}
+
+details.faq-item summary {
+  list-style: none;
+  outline: none;
+  cursor: pointer;
+}
+
+details.faq-item summary::-webkit-details-marker,
+details.faq-item summary::marker {
+  display: none;
 }
 
 .faq-question {
@@ -920,44 +936,44 @@ button, input {
   font-weight: 700;
   color: var(--text-primary);
   text-align: left;
-  cursor: pointer;
 }
 
 .faq-icon {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
   transition: var(--transition-fast);
+  flex-shrink: 0;
 }
 
-.faq-item.active .faq-icon {
+details.faq-item[open] {
+  border-color: rgba(16, 208, 0, 0.4);
+  background: rgba(26, 36, 62, 0.95);
+}
+
+details.faq-item[open] .faq-icon {
   transform: rotate(45deg);
   background: var(--accent-green);
   color: #05070E;
 }
 
 .faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out, padding 0.3s ease;
-  padding: 0 1.5rem;
+  padding: 0 1.5rem 1.5rem 1.5rem;
   color: var(--text-secondary);
   font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.faq-item.active .faq-answer {
-  max-height: 200px;
-  padding: 0 1.5rem 1.5rem 1.5rem;
+  line-height: 1.65;
+  border-top: 1px solid var(--border-light);
+  margin-top: 0.5rem;
+  padding-top: 1rem;
 }
 
 /* --------------------------------------------------------------------------
-   13. Contact & Footer — Responsive Email Link & Logo Badge
+   13. Contact & Footer
    -------------------------------------------------------------------------- */
 .footer {
   background: #030408;
@@ -1018,7 +1034,6 @@ button, input {
   border-color: rgba(16, 208, 0, 0.3);
 }
 
-/* Official Responsive Email Link Container */
 .footer-email-link {
   display: inline-flex;
   align-items: center;
@@ -1042,7 +1057,6 @@ button, input {
   color: #FFFFFF;
 }
 
-/* Email Logo Badge Icon */
 .email-icon-badge {
   width: 36px;
   height: 36px;
@@ -1075,8 +1089,7 @@ button, input {
 }
 
 /* --------------------------------------------------------------------------
-   14. Responsive Breakpoints & Adaptive Layouts
-   Supports down to 400px minimum width
+   14. Responsive Breakpoints & Adaptive Layouts (Down to 400px)
    -------------------------------------------------------------------------- */
 
 /* Tablet Breakpoint (max-width: 1024px) */
@@ -1130,14 +1143,14 @@ button, input {
   }
 }
 
-/* Mobile Breakpoint (max-width: 767px - supports down to 400px) */
+/* Mobile Breakpoint (max-width: 767px - Pure CSS Checkbox Mobile Drawer) */
 @media (max-width: 767px) {
   .container {
     padding: 0 1.2rem;
   }
 
   .header {
-    height: 70px;
+    height: 75px;
   }
 
   .mobile-toggle {
@@ -1146,7 +1159,7 @@ button, input {
 
   .nav-menu {
     position: fixed;
-    top: 70px;
+    top: 75px;
     left: 0;
     right: 0;
     background: #080A12;
@@ -1159,8 +1172,21 @@ button, input {
     box-shadow: var(--shadow-lg);
   }
 
-  .nav-menu.active {
+  /* Pure CSS Toggle Rule when Checkbox is Checked */
+  .nav-toggle-checkbox:checked ~ .nav-menu {
     transform: translateY(0);
+  }
+
+  .nav-toggle-checkbox:checked ~ .mobile-toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .nav-toggle-checkbox:checked ~ .mobile-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle-checkbox:checked ~ .mobile-toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
   }
 
   .nav-cta {
@@ -1168,7 +1194,7 @@ button, input {
   }
 
   .hero {
-    padding-top: calc(70px + 2rem);
+    padding-top: calc(75px + 2rem);
     padding-bottom: 3.5rem;
   }
 

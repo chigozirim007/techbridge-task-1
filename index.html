@@ -24,22 +24,32 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Main External Stylesheet -->
+  <!-- Main External Stylesheet (Pure CSS3) -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- ==========================================================================
-       HEADER & NAVIGATION
+       HEADER & NAVIGATION (Pure CSS Mobile Drawer with Checkbox Hack)
        ========================================================================== -->
   <header class="header" id="header">
     <div class="container header-container">
-      <!-- TechBridge Exact Official Logo -->
+      <!-- TechBridge Logo -->
       <a href="#home" class="logo-link" aria-label="TechBridge Homepage">
         <img src="images/logo.png" alt="TechBridge Logo" class="logo-img">
       </a>
 
-      <!-- Desktop Navigation Menu -->
+      <!-- Pure CSS Checkbox Toggle for Mobile Menu -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Toggle navigation menu">
+      
+      <!-- Hamburger Icon Label -->
+      <label for="nav-toggle" class="mobile-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Desktop & Mobile Navigation Menu -->
       <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
         <a href="#home" class="nav-link active">Home</a>
         <a href="#about" class="nav-link">About</a>
@@ -50,19 +60,12 @@
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
 
-      <!-- CTA & Mobile Toggle -->
+      <!-- CTA Button -->
       <div class="nav-cta">
         <a href="#apply" class="btn btn-primary" id="nav-apply-btn">
           <span>Apply Now</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
-      </div>
-
-      <!-- Mobile Hamburger Button -->
-      <div class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
-        <span></span>
-        <span></span>
-        <span></span>
       </div>
     </div>
   </header>
@@ -399,7 +402,7 @@
     </section>
 
     <!-- ==========================================================================
-         7. FAQ SECTION
+         7. FAQ SECTION (Pure HTML5 <details> and <summary>)
          ========================================================================== -->
     <section class="faq-section" id="faq">
       <div class="container">
@@ -410,55 +413,55 @@
         </div>
 
         <div class="faq-container">
-          <div class="faq-item">
-            <div class="faq-question">
+          <details class="faq-item">
+            <summary class="faq-question">
               <span>What is TechBridge?</span>
               <span class="faq-icon">+</span>
-            </div>
+            </summary>
             <div class="faq-answer">
               TechBridge by Baselink Services Limited is an internship initiative built to help learners convert theoretical knowledge into real-world practical skills through intensive 30-day project building.
             </div>
-          </div>
+          </details>
 
-          <div class="faq-item">
-            <div class="faq-question">
+          <details class="faq-item">
+            <summary class="faq-question">
               <span>What programs are currently available?</span>
               <span class="faq-icon">+</span>
-            </div>
+            </summary>
             <div class="faq-answer">
               Currently, TechBridge offers two specialized internship tracks: Data Analytics and Web Development.
             </div>
-          </div>
+          </details>
 
-          <div class="faq-item">
-            <div class="faq-question">
+          <details class="faq-item">
+            <summary class="faq-question">
               <span>How long is the internship program?</span>
               <span class="faq-icon">+</span>
-            </div>
+            </summary>
             <div class="faq-answer">
               The internship runs for a focused duration of 30 days, packed with practical project milestones and task assignments.
             </div>
-          </div>
+          </details>
 
-          <div class="faq-item">
-            <div class="faq-question">
+          <details class="faq-item">
+            <summary class="faq-question">
               <span>Will I receive a recommendation letter?</span>
               <span class="faq-icon">+</span>
             </div>
             <div class="faq-answer">
               Yes! Interns who successfully participate, submit required task assignments, and demonstrate strong project performance are eligible to receive an official recommendation letter from Baselink Services Limited.
             </div>
-          </div>
+          </details>
 
-          <div class="faq-item">
-            <div class="faq-question">
+          <details class="faq-item">
+            <summary class="faq-question">
               <span>How do I contact TechBridge?</span>
               <span class="faq-icon">+</span>
-            </div>
+            </summary>
             <div class="faq-answer">
               You can reach out directly to the official TechBridge email address at <strong>techbridgebaslink@gmail.com</strong>.
             </div>
-          </div>
+          </details>
         </div>
       </div>
     </section>
@@ -526,7 +529,7 @@
 
       <div class="footer-bottom">
         <div>
-          &copy; <span id="year">2026</span> TechBridge by Baselink Services Limited. All rights reserved.
+          &copy; 2026 TechBridge by Baselink Services Limited. All rights reserved.
         </div>
         <div>
           Task 1 — TechBridge Web Development Internship
@@ -534,70 +537,5 @@
       </div>
     </div>
   </footer>
-
-  <!-- ==========================================================================
-       INTERACTIVE JAVASCRIPT SCRIPTS
-       ========================================================================== -->
-  <script>
-    // Set dynamic current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mobile Hamburger Navigation Drawer Toggle
-    const mobileToggle = document.getElementById('mobile-toggle');
-    const navMenu = document.getElementById('nav-menu');
-
-    if (mobileToggle && navMenu) {
-      mobileToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        mobileToggle.classList.toggle('open');
-      });
-
-      // Close menu when clicking on any nav link
-      document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-          navMenu.classList.remove('active');
-        });
-      });
-    }
-
-    // Interactive FAQ Accordion
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-      const question = item.querySelector('.faq-question');
-      question.addEventListener('click', () => {
-        const isOpen = item.classList.contains('active');
-        
-        // Close all other open FAQ items
-        faqItems.forEach(otherItem => {
-          otherItem.classList.remove('active');
-        });
-
-        // Toggle clicked item
-        if (!isOpen) {
-          item.classList.add('active');
-        }
-      });
-    });
-
-    // Active Navigation Highlight on Scroll
-    const sections = document.querySelectorAll('section[id]');
-    window.addEventListener('scroll', () => {
-      const scrollY = window.pageYOffset;
-      sections.forEach(current => {
-        const sectionHeight = current.offsetHeight;
-        const sectionTop = current.offsetTop - 100;
-        const sectionId = current.getAttribute('id');
-        const navLink = document.querySelector(`.nav-menu a[href*=${sectionId}]`);
-
-        if (navLink) {
-          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLink.classList.add('active');
-          } else {
-            navLink.classList.remove('active');
-          }
-        }
-      });
-    });
-  </script>
 </body>
 </html>
