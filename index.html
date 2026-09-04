@@ -30,7 +30,7 @@
 <body>
 
   <!-- ==========================================================================
-       HEADER & NAVIGATION (Pure CSS Mobile Drawer with Checkbox Hack)
+       HEADER & NAVIGATION (Pure CSS Checkbox Toggle Mobile Menu)
        ========================================================================== -->
   <header class="header" id="header">
     <div class="container header-container">
@@ -53,7 +53,7 @@
       <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
         <a href="#home" class="nav-link active">Home</a>
         <a href="#about" class="nav-link">About</a>
-        <a href="#programs" class="nav-link">Programs</a>
+        <a href="programs.html" class="nav-link">Programs</a>
         <a href="#internship" class="nav-link">Internship</a>
         <a href="#benefits" class="nav-link">Why Join</a>
         <a href="#faq" class="nav-link">FAQ</a>
@@ -62,7 +62,7 @@
 
       <!-- CTA Button -->
       <div class="nav-cta">
-        <a href="#apply" class="btn btn-primary" id="nav-apply-btn">
+        <a href="https://forms.gle/8EbdSy5ttGfLZfjv5?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="nav-apply-btn">
           <span>Apply Now</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
@@ -96,13 +96,12 @@
           </p>
 
           <div class="hero-buttons">
-            <a href="#apply" class="btn btn-primary" id="hero-apply-btn">
+            <a href="https://forms.gle/8EbdSy5ttGfLZfjv5?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="hero-apply-btn">
               <span>Apply for Internship</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
-            <a href="#community" class="btn btn-whatsapp" id="hero-whatsapp-btn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-              <span>Join WhatsApp Community</span>
+            <a href="programs.html" class="btn btn-secondary">
+              <span>Explore All Programs →</span>
             </a>
           </div>
 
@@ -205,7 +204,7 @@
               <span class="program-badge badge-analytics">Data Track</span>
               <h3 class="program-title">Data Analytics</h3>
               <p class="program-description">
-                Master data interpretation, exploratory analysis, metrics reporting, and predictive modeling. Transform raw datasets into actionable insights that power strategic decision-making.
+                Focus on working with data and extracting business insights. Learn spreadsheet analysis, data cleaning, SQL database querying, visualization, and business analytics.
               </p>
             </div>
 
@@ -215,17 +214,16 @@
 
             <div class="program-skills-title">Key Focus Areas &amp; Tools</div>
             <div class="program-skills-list">
+              <span class="skill-tag">Spreadsheet Analysis</span>
+              <span class="skill-tag">Data Cleaning</span>
+              <span class="skill-tag">SQL Database</span>
               <span class="skill-tag">Data Visualization</span>
-              <span class="skill-tag">Exploratory Analysis</span>
-              <span class="skill-tag">SQL &amp; Querying</span>
-              <span class="skill-tag">Python for Data</span>
-              <span class="skill-tag">Dashboarding</span>
-              <span class="skill-tag">Business Insights</span>
+              <span class="skill-tag">Business Analytics</span>
             </div>
 
             <div class="program-footer">
               <span style="font-weight: 700; color: var(--accent-green); font-size: 0.9rem;">Duration: 30 Days</span>
-              <a href="#apply" class="btn btn-secondary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">Select Track</a>
+              <a href="programs.html#data-analytics-detail" class="btn btn-secondary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">View Full Track →</a>
             </div>
           </article>
 
@@ -235,7 +233,7 @@
               <span class="program-badge badge-webdev">Development Track</span>
               <h3 class="program-title">Web Development</h3>
               <p class="program-description">
-                Craft responsive, accessible, and high-performance modern web applications using clean HTML5, CSS3, and JavaScript. Learn real-world repository structures and deployment workflows.
+                Focus on designing and building responsive websites and web applications. Master HTML, CSS, JavaScript, Git, GitHub, and building real web projects.
               </p>
             </div>
 
@@ -245,19 +243,24 @@
 
             <div class="program-skills-title">Key Focus Areas &amp; Tools</div>
             <div class="program-skills-list">
-              <span class="skill-tag">HTML5 &amp; Semantic Web</span>
-              <span class="skill-tag">CSS3 &amp; Responsive Layouts</span>
-              <span class="skill-tag">UI/UX Best Practices</span>
-              <span class="skill-tag">Git &amp; GitHub</span>
-              <span class="skill-tag">DOM Manipulation</span>
-              <span class="skill-tag">Web Deployment</span>
+              <span class="skill-tag">HTML Markup</span>
+              <span class="skill-tag">CSS Layouts</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Git / GitHub</span>
+              <span class="skill-tag">Building Web Projects</span>
             </div>
 
             <div class="program-footer">
               <span style="font-weight: 700; color: var(--accent-green); font-size: 0.9rem;">Duration: 30 Days</span>
-              <a href="#apply" class="btn btn-secondary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">Select Track</a>
+              <a href="programs.html#web-dev-detail" class="btn btn-secondary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">View Full Track →</a>
             </div>
           </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="programs.html" class="btn btn-primary" style="padding: 1rem 2.25rem; font-size: 1.05rem;">
+            <span>Explore Dedicated Programs Experience →</span>
+          </a>
         </div>
       </div>
     </section>
@@ -309,7 +312,7 @@
               </div>
             </div>
 
-            <a href="#apply" class="btn btn-primary">Enroll in 30-Day Internship</a>
+            <a href="https://forms.gle/8EbdSy5ttGfLZfjv5?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Enroll in 30-Day Internship</a>
           </div>
 
           <div class="internship-badge-container">
@@ -386,7 +389,7 @@
 
           <div class="cta-actions">
             <!-- Official Application Form Button -->
-            <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="official-apply-btn" style="padding: 1rem 2.25rem; font-size: 1.05rem;">
+            <a href="https://forms.gle/8EbdSy5ttGfLZfjv5?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="official-apply-btn" style="padding: 1rem 2.25rem; font-size: 1.05rem;">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
               <span>TechBridge Internship Application Form</span>
             </a>
@@ -402,7 +405,7 @@
     </section>
 
     <!-- ==========================================================================
-         7. FAQ SECTION (Pure HTML5 <details> and <summary>)
+         7. FAQ SECTION
          ========================================================================== -->
     <section class="faq-section" id="faq">
       <div class="container">
@@ -447,7 +450,7 @@
             <summary class="faq-question">
               <span>Will I receive a recommendation letter?</span>
               <span class="faq-icon">+</span>
-            </div>
+            </summary>
             <div class="faq-answer">
               Yes! Interns who successfully participate, submit required task assignments, and demonstrate strong project performance are eligible to receive an official recommendation letter from Baselink Services Limited.
             </div>
@@ -490,7 +493,7 @@
           <ul class="footer-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About TechBridge</a></li>
-            <li><a href="#programs">Programs</a></li>
+            <li><a href="programs.html">Programs</a></li>
             <li><a href="#internship">30-Day Internship</a></li>
             <li><a href="#benefits">Benefits</a></li>
           </ul>
@@ -500,9 +503,9 @@
         <div>
           <h4 class="footer-col-title">Programs</h4>
           <ul class="footer-links">
-            <li><a href="#program-data-analytics">Data Analytics</a></li>
-            <li><a href="#program-web-development">Web Development</a></li>
-            <li><a href="#apply">Application Form</a></li>
+            <li><a href="programs.html#data-analytics-detail">Data Analytics</a></li>
+            <li><a href="programs.html#web-dev-detail">Web Development</a></li>
+            <li><a href="https://forms.gle/8EbdSy5ttGfLZfjv5?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Application Form</a></li>
             <li><a href="#community">WhatsApp Group</a></li>
           </ul>
         </div>
@@ -532,7 +535,7 @@
           &copy; 2026 TechBridge by Baselink Services Limited. All rights reserved.
         </div>
         <div>
-          Task 1 — TechBridge Web Development Internship
+          Task 1 &amp; 2 — TechBridge Web Development Internship
         </div>
       </div>
     </div>

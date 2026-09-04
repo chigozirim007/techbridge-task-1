@@ -1280,3 +1280,227 @@ details.faq-item[open] .faq-icon {
     font-size: 1.5rem;
   }
 }
+
+/* --------------------------------------------------------------------------
+   15. Task 2 Programs Differentiation & Deep Dive Layouts
+   -------------------------------------------------------------------------- */
+.diff-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.diff-card {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  position: relative;
+}
+
+.diff-analytics {
+  border-top: 4px solid var(--accent-blue);
+}
+
+.diff-webdev {
+  border-top: 4px solid var(--accent-green);
+}
+
+.diff-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.diff-core-focus {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--accent-green);
+}
+
+.diff-analytics .diff-core-focus {
+  border-left-color: #60A5FA;
+}
+
+.diff-desc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.diff-skills-box {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  margin-bottom: 1.75rem;
+  margin-top: auto;
+}
+
+.diff-skills-box h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.diff-skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.diff-skills-list li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.check-icon {
+  color: var(--accent-green);
+  font-weight: 800;
+}
+
+.programs-detail-section {
+  padding: 3rem 0;
+}
+
+.detail-card {
+  padding: 3.5rem;
+  border-radius: var(--radius-lg);
+}
+
+.detail-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 2.5rem;
+}
+
+.detail-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.detail-subtitle-text {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.detail-track-icon {
+  font-size: 3rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+}
+
+.detail-info h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.detail-info p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.syllabus-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.syllabus-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+}
+
+.syllabus-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.syllabus-item h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.syllabus-item p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.outcomes-box {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  margin-top: 1.5rem;
+}
+
+.outcomes-box h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+  color: var(--accent-green);
+}
+
+.outcomes-box ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 1.25rem;
+  list-style-type: disc;
+}
+
+.outcomes-box li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 1024px) {
+  .diff-grid {
+    grid-template-columns: 1fr;
+  }
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+  .detail-card {
+    padding: 2.25rem 1.5rem;
+  }
+}
+

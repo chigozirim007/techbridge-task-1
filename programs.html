@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechBridge Programs — Data Analytics & Web Development | Baselink Services Limited</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Explore TechBridge's 30-Day Practical Internship Programs in Data Analytics and Web Development. Master spreadsheet analysis, SQL, HTML, CSS, JavaScript, and Git through real project building.">
+  <meta name="keywords" content="TechBridge Programs, Data Analytics Internship, Web Development Internship, Spreadsheet Analysis, SQL, Data Cleaning, HTML, CSS, JavaScript, Git, GitHub">
+  <meta name="author" content="TechBridge by Baselink Services Limited">
+  
+  <!-- OpenGraph Social Sharing -->
+  <meta property="og:title" content="TechBridge Programs — Practical Learning in Data & Web Development">
+  <meta property="og:description" content="Build in-demand practical skills with TechBridge's specialized tracks in Data Analytics and Web Development.">
+  <meta property="og:image" content="images/hero-graphic.svg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Main External Stylesheet (Pure CSS3) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION (Pure CSS Checkbox Toggle Mobile Menu)
+       ========================================================================== -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <!-- TechBridge Logo -->
+      <a href="index.html" class="logo-link" aria-label="TechBridge Homepage">
+        <img src="images/logo.png" alt="TechBridge Logo" class="logo-img">
+      </a>
+
+      <!-- Pure CSS Checkbox Toggle for Mobile Menu -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Toggle navigation menu">
+      
+      <!-- Hamburger Icon Label -->
+      <label for="nav-toggle" class="mobile-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Desktop & Mobile Navigation Menu -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <a href="index.html#home" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="programs.html" class="nav-link active">Programs</a>
+        <a href="index.html#internship" class="nav-link">Internship</a>
+        <a href="index.html#benefits" class="nav-link">Why Join</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="nav-cta">
+        <a href="https://forms.gle/8EbdSy5ttGfLZfjv5?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="nav-apply-btn">
+          <span>Apply Now</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         1. PROGRAMS HERO SECTION
+         ========================================================================== -->
+    <section class="hero" id="programs-hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="pulse"></span>
+            <span>Practical Tech Training</span>
+          </div>
+
+          <h1 class="hero-title">
+            Our Practical <span class="text-gradient">Learning Programs</span>
+          </h1>
+
+          <p class="hero-tagline">
+            Bridging Learning to Real-World Experience
+          </p>
+
+          <p class="hero-description">
+            TechBridge by <strong>Baselink Services Limited</strong> offers specialized, project-focused internship tracks designed to answer one crucial question: <em>"What exactly can I learn at TechBridge?"</em>
+            Transition from theory to practical industry execution with guided real-world deliverables.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="https://forms.gle/8EbdSy5ttGfLZfjv5?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <span>Apply for TechBridge Internship</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#program-differentiation" class="btn btn-secondary">
+              <span>Compare Tracks</span>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number text-gradient">2 Tracks</span>
+              <span class="stat-label">Data &amp; Web</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number text-gradient">100%</span>
+              <span class="stat-label">Hands-On Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number text-gradient">30 Days</span>
+              <span class="stat-label">Intensive Practice</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img src="images/hero-graphic.svg" alt="TechBridge Programs Graphic Illustration" class="hero-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         2. PROGRAM DIFFERENTIATION & OVERVIEW COMPARISON
+         ========================================================================== -->
+    <section class="programs-section" id="program-differentiation">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-tag">Program Differentiation</div>
+          <h2 class="section-title">Which Track Fits Your <span class="text-gradient">Career Goals?</span></h2>
+          <p class="section-subtitle">
+            Compare our two core programs side-by-side to determine which technical path matches your interests.
+          </p>
+        </div>
+
+        <div class="diff-grid">
+          <!-- Track 1 Card: Data Analytics -->
+          <div class="glass-panel diff-card diff-analytics">
+            <div class="diff-card-header">
+              <div class="diff-badge badge-analytics">Data Track</div>
+              <h3 class="diff-title">Data Analytics</h3>
+              <p class="diff-core-focus">
+                💡 <strong>Core Focus:</strong> Working with data and extracting actionable business insights.
+              </p>
+            </div>
+            
+            <p class="diff-desc">
+              Ideal for learners who love analyzing numbers, organizing information, finding patterns in datasets, and turning raw data into strategic decision-making reports.
+            </p>
+
+            <div class="diff-skills-box">
+              <h4>Primary Core Skills You Will Develop:</h4>
+              <ul class="diff-skills-list">
+                <li><span class="check-icon">✓</span> Spreadsheet Analysis &amp; Formulas</li>
+                <li><span class="check-icon">✓</span> Data Cleaning &amp; Preprocessing</li>
+                <li><span class="check-icon">✓</span> SQL Database Querying</li>
+                <li><span class="check-icon">✓</span> Data Visualization &amp; Charts</li>
+                <li><span class="check-icon">✓</span> Business-Focused Analysis</li>
+              </ul>
+            </div>
+
+            <div class="diff-action">
+              <a href="#data-analytics-detail" class="btn btn-secondary" style="width: 100%;">View Full Syllabus &amp; Projects</a>
+            </div>
+          </div>
+
+          <!-- Track 2 Card: Web Development -->
+          <div class="glass-panel diff-card diff-webdev">
+            <div class="diff-card-header">
+              <div class="diff-badge badge-webdev">Development Track</div>
+              <h3 class="diff-title">Web Development</h3>
+              <p class="diff-core-focus">
+                💻 <strong>Core Focus:</strong> Designing and building responsive websites and web applications.
+              </p>
+            </div>
+
+            <p class="diff-desc">
+              Ideal for learners who want to construct software user interfaces, write code, build interactive web features, and deploy projects live to the web.
+            </p>
+
+            <div class="diff-skills-box">
+              <h4>Primary Core Skills You Will Develop:</h4>
+              <ul class="diff-skills-list">
+                <li><span class="check-icon">✓</span> HTML5 &amp; Semantic Web Markup</li>
+                <li><span class="check-icon">✓</span> CSS3 Layouts, Flexbox &amp; Grid</li>
+                <li><span class="check-icon">✓</span> JavaScript Logic &amp; DOM Manipulation</li>
+                <li><span class="check-icon">✓</span> Git &amp; GitHub Version Control</li>
+                <li><span class="check-icon">✓</span> Building Real Web Projects</li>
+              </ul>
+            </div>
+
+            <div class="diff-action">
+              <a href="#web-dev-detail" class="btn btn-secondary" style="width: 100%;">View Full Syllabus &amp; Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. DEEP-DIVE PROGRAM PRESENTATIONS & SKILL SYLLABUS
+         ========================================================================== -->
+    <section class="programs-detail-section" id="data-analytics-detail">
+      <div class="container">
+        <!-- Detailed Section 1: Data Analytics Track -->
+        <article class="glass-panel detail-card">
+          <div class="detail-card-header">
+            <div>
+              <span class="program-badge badge-analytics">Comprehensive Program Track</span>
+              <h2 class="detail-title">Data Analytics Program</h2>
+              <p class="detail-subtitle-text">
+                Working with data and extracting strategic business insights
+              </p>
+            </div>
+            <div class="detail-track-icon">📊</div>
+          </div>
+
+          <div class="detail-grid">
+            <!-- Left Column: Overview & Topics -->
+            <div class="detail-info">
+              <h3>What You Will Learn</h3>
+              <p>
+                The <strong>Data Analytics</strong> program at TechBridge introduces learners to practical data analysis methods used by industry professionals. You will learn to clean messy data, run queries against relational databases, generate clear charts, and present data-backed recommendations.
+              </p>
+
+              <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--text-primary);">Syllabus &amp; Focus Areas:</h4>
+              <div class="syllabus-grid">
+                <div class="syllabus-item">
+                  <div class="syllabus-icon">📑</div>
+                  <div>
+                    <h5>Spreadsheet Analysis</h5>
+                    <p>Master data manipulation, formulas, functions, and structured data tables.</p>
+                  </div>
+                </div>
+
+                <div class="syllabus-item">
+                  <div class="syllabus-icon">🧹</div>
+                  <div>
+                    <h5>Data Cleaning</h5>
+                    <p>Identify missing values, remove duplicates, handle outliers, and prepare clean datasets.</p>
+                  </div>
+                </div>
+
+                <div class="syllabus-item">
+                  <div class="syllabus-icon">🗄️</div>
+                  <div>
+                    <h5>SQL Database Querying</h5>
+                    <p>Write SQL queries using SELECT, WHERE, JOIN, and GROUP BY to extract insights.</p>
+                  </div>
+                </div>
+
+                <div class="syllabus-item">
+                  <div class="syllabus-icon">📈</div>
+                  <div>
+                    <h5>Data Visualization</h5>
+                    <p>Create visual dashboards, trend graphs, and data charts that communicate key metrics clearly.</p>
+                  </div>
+                </div>
+
+                <div class="syllabus-item">
+                  <div class="syllabus-icon">💼</div>
+                  <div>
+                    <h5>Business-Focused Analysis</h5>
+                    <p>Translate analytical findings into actionable business solutions and executive summaries.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Visual & Outcomes -->
+            <div class="detail-outcomes">
+              <div class="program-visual" style="margin-top: 0;">
+                <img src="images/program-analytics.svg" alt="Data Analytics Program Dashboard">
+              </div>
+
+              <div class="outcomes-box">
+                <h4>Practical Portfolio Deliverables</h4>
+                <ul>
+                  <li>Exploratory Data Analysis (EDA) Report</li>
+                  <li>Cleaned &amp; Standardized Business Dataset</li>
+                  <li>SQL Query Repository for Business Metrics</li>
+                  <li>Interactive Data Visualization Dashboard</li>
+                </ul>
+              </div>
+
+              <a href="https://forms.gle/8EbdSy5ttGfLZfjv5?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; margin-top: 1.25rem;">
+                Apply for Data Analytics Track
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Detailed Section 2: Web Development Track -->
+    <section class="programs-detail-section" id="web-dev-detail" style="padding-top: 2rem;">
+      <div class="container">
+        <article class="glass-panel detail-card">
+          <div class="detail-card-header">
+            <div>
+              <span class="program-badge badge-webdev">Comprehensive Program Track</span>
+              <h2 class="detail-title">Web Development Program</h2>
+              <p class="detail-subtitle-text">
+                Designing and building modern websites and web applications
+              </p>
+            </div>
+            <div class="detail-track-icon">🌐</div>
+          </div>
+
+          <div class="detail-grid">
+            <!-- Left Column: Overview & Topics -->
+            <div class="detail-info">
+              <h3>What You Will Learn</h3>
+              <p>
+                The <strong>Web Development</strong> program at TechBridge equips learners with practical tools to build real, responsive websites from scratch. You will structure web pages semantically, style them with modern CSS layouts, add interactivity with JavaScript, and publish code to GitHub.
+              </p>
+
+              <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--text-primary);">Syllabus &amp; Focus Areas:</h4>
+              <div class="syllabus-grid">
+                <div class="syllabus-item">
+                  <div class="syllabus-icon">🏗️</div>
+                  <div>
+                    <h5>HTML (HTML5)</h5>
+                    <p>Build accessible web document structures using semantic tags, forms, and media elements.</p>
+                  </div>
+                </div>
+
+                <div class="syllabus-item">
+                  <div class="syllabus-icon">🎨</div>
+                  <div>
+                    <h5>CSS (CSS3)</h5>
+                    <p>Style web applications with responsive Flexbox, CSS Grid, custom themes, and glassmorphism styling.</p>
+                  </div>
+                </div>
+
+                <div class="syllabus-item">
+                  <div class="syllabus-icon">⚡</div>
+                  <div>
+                    <h5>JavaScript</h5>
+                    <p>Add client-side interactivity, event handling, dynamic UI state changes, and DOM manipulation.</p>
+                  </div>
+                </div>
+
+                <div class="syllabus-item">
+                  <div class="syllabus-icon">📦</div>
+                  <div>
+                    <h5>Git / GitHub</h5>
+                    <p>Manage code versions, commit project history, collaborate, and push repositories to GitHub.</p>
+                  </div>
+                </div>
+
+                <div class="syllabus-item">
+                  <div class="syllabus-icon">🚀</div>
+                  <div>
+                    <h5>Building Web Projects</h5>
+                    <p>Construct complete, production-ready website projects hosted live on web servers.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Visual & Outcomes -->
+            <div class="detail-outcomes">
+              <div class="program-visual" style="margin-top: 0;">
+                <img src="images/program-webdev.svg" alt="Web Development Program Browser Mockup">
+              </div>
+
+              <div class="outcomes-box">
+                <h4>Practical Portfolio Deliverables</h4>
+                <ul>
+                  <li>Semantic &amp; Responsive Personal Portfolio Page</li>
+                  <li>Modern Business Homepage Project</li>
+                  <li>GitHub Code Repository with Commit History</li>
+                  <li>Live Deployed Web Application</li>
+                </ul>
+              </div>
+
+              <a href="https://forms.gle/8EbdSy5ttGfLZfjv5?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; margin-top: 1.25rem;">
+                Apply for Web Development Track
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. CALL TO ACTION SECTION
+         ========================================================================== -->
+    <section class="cta-section" id="apply">
+      <div class="container">
+        <div class="cta-box" id="community">
+          <div class="section-tag" style="background: rgba(16, 208, 0, 0.15); border-color: rgba(16, 208, 0, 0.4);">Next Steps</div>
+          <h2 class="cta-title">Ready to Begin Your <span class="text-gradient">Practical Learning Journey?</span></h2>
+          <p class="cta-desc">
+            Choose your preferred program and submit your application for the 30-day practical internship program today.
+          </p>
+
+          <div class="cta-actions">
+            <!-- Official Application Form Link -->
+            <a href="https://forms.gle/8EbdSy5ttGfLZfjv5?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="official-apply-btn" style="padding: 1rem 2.25rem; font-size: 1.05rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              <span>TechBridge Internship Application Form</span>
+            </a>
+
+            <!-- Return to Homepage Link -->
+            <a href="index.html" class="btn btn-secondary" style="padding: 1rem 2rem; font-size: 1.05rem;">
+              <span>← Back to Homepage</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       5. FOOTER & OFFICIAL CONTACT
+       ========================================================================== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Footer Column 1: Brand Info -->
+        <div class="footer-brand">
+          <a href="index.html" aria-label="TechBridge Home">
+            <img src="images/logo.png" alt="TechBridge Logo" style="height: 64px; width: auto;">
+          </a>
+          <p>
+            <strong>TechBridge</strong> by <strong>Baselink Services Limited</strong>.<br>
+            Bridging Learning to Real-World Experience.
+          </p>
+        </div>
+
+        <!-- Footer Column 2: Quick Links -->
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About TechBridge</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="index.html#internship">30-Day Internship</a></li>
+            <li><a href="index.html#benefits">Benefits</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Column 3: Internship Tracks -->
+        <div>
+          <h4 class="footer-col-title">Programs</h4>
+          <ul class="footer-links">
+            <li><a href="#data-analytics-detail">Data Analytics</a></li>
+            <li><a href="#web-dev-detail">Web Development</a></li>
+            <li><a href="https://forms.gle/8EbdSy5ttGfLZfjv5?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Application Form</a></li>
+            <li><a href="index.html#community">WhatsApp Group</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Column 4: Official Contact -->
+        <div>
+          <h4 class="footer-col-title">Official Contact</h4>
+          <div class="footer-contact-box">
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">Have questions or inquiries?</p>
+            <a href="mailto:techbridgebaslink@gmail.com" class="footer-email-link" aria-label="Send email to techbridgebaslink@gmail.com">
+              <div class="email-icon-badge">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <span class="email-address-text">techbridgebaslink@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 TechBridge by Baselink Services Limited. All rights reserved.
+        </div>
+        <div>
+          Task 2 — TechBridge Programs Experience
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
