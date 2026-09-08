@@ -1504,3 +1504,253 @@ details.faq-item[open] .faq-icon {
   }
 }
 
+/* --------------------------------------------------------------------------
+   16. Task 3 Internship Tasks Experience & Progression Layouts
+   -------------------------------------------------------------------------- */
+.progression-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem 2rem;
+  border-radius: var(--radius-lg);
+  gap: 0.5rem;
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.progression-step-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.35rem;
+  min-width: 90px;
+}
+
+.prog-day {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-green);
+}
+
+.prog-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.progression-arrow {
+  color: var(--text-muted);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+/* Difficulty Tier Badges */
+.diff-tag {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.725rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.diff-beginner {
+  background: rgba(16, 208, 0, 0.12);
+  color: #10D000;
+  border: 1px solid rgba(16, 208, 0, 0.3);
+}
+
+.diff-beg-int {
+  background: rgba(56, 189, 248, 0.12);
+  color: #38BDF8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.diff-intermediate {
+  background: rgba(37, 99, 235, 0.15);
+  color: #60A5FA;
+  border: 1px solid rgba(37, 99, 235, 0.35);
+}
+
+.diff-int-adv {
+  background: rgba(168, 85, 247, 0.15);
+  color: #C084FC;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+}
+
+.diff-advanced {
+  background: rgba(244, 63, 94, 0.15);
+  color: #FB7185;
+  border: 1px solid rgba(244, 63, 94, 0.35);
+}
+
+.diff-capstone {
+  background: linear-gradient(135deg, rgba(16, 208, 0, 0.2), rgba(37, 99, 235, 0.2));
+  color: #FFFFFF;
+  border: 1px solid var(--accent-green);
+  box-shadow: 0 0 10px rgba(16, 208, 0, 0.2);
+}
+
+/* Task Cards Grid */
+.tasks-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 2rem auto 0 auto;
+}
+
+details.task-card {
+  padding: 0;
+  border-radius: var(--radius-lg);
+  transition: var(--transition-normal);
+}
+
+details.task-card summary.task-card-summary {
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+details.task-card summary.task-card-summary::-webkit-details-marker,
+details.task-card summary.task-card-summary::marker {
+  display: none;
+}
+
+.task-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.task-number-badge {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--accent-green);
+  padding: 0.3rem 0.75rem;
+  background: rgba(16, 208, 0, 0.1);
+  border: 1px solid rgba(16, 208, 0, 0.25);
+  border-radius: var(--radius-sm);
+}
+
+.task-day-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  padding: 0.3rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-sm);
+}
+
+.task-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+
+.task-card-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+details.task-card[open] {
+  border-color: rgba(16, 208, 0, 0.35);
+  background: var(--bg-card-hover);
+  box-shadow: var(--shadow-md);
+}
+
+details.task-card[open] .faq-icon {
+  transform: rotate(45deg);
+  background: var(--accent-green);
+  color: #05070E;
+}
+
+.task-card-content {
+  padding: 0 2rem 2rem 2rem;
+  border-top: 1px solid var(--border-light);
+  margin-top: 0.5rem;
+  padding-top: 1.5rem;
+}
+
+.task-brief-desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.task-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.task-deliverables-box {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.task-deliverables-box h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-green);
+  margin-bottom: 0.75rem;
+}
+
+.task-deliverables-box ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 1.25rem;
+  list-style-type: disc;
+}
+
+.task-deliverables-box li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.task-deliverables-box code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: #38BDF8;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+@media (max-width: 767px) {
+  details.task-card summary.task-card-summary {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+    gap: 0.75rem;
+  }
+  .task-card-content {
+    padding: 0 1.25rem 1.25rem 1.25rem;
+  }
+  .progression-bar-container {
+    padding: 1.25rem;
+  }
+}
+
+

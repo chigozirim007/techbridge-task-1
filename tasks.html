@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internship Tasks — 30-Day Practical Journey | TechBridge</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Explore the 30-day, 8-task practical learning journey for TechBridge interns. Understand task progression from beginner HTML/CSS to complete web platform capstone projects.">
+  <meta name="keywords" content="TechBridge Tasks, 30-Day Internship Roadmap, Tech Learning Progression, HTML, CSS, JavaScript, Web Development Tasks">
+  <meta name="author" content="TechBridge by Baselink Services Limited">
+  
+  <!-- OpenGraph Social Sharing -->
+  <meta property="og:title" content="TechBridge Internship Tasks — 30-Day Learning Journey">
+  <meta property="og:description" content="Follow the step-by-step 8-task practical roadmap designed for emerging developers and data professionals.">
+  <meta property="og:image" content="images/hero-graphic.svg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Main External Stylesheet (Pure CSS3) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION (Pure CSS Checkbox Toggle Mobile Menu)
+       ========================================================================== -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <!-- TechBridge Logo -->
+      <a href="index.html" class="logo-link" aria-label="TechBridge Homepage">
+        <img src="images/logo.png" alt="TechBridge Logo" class="logo-img">
+      </a>
+
+      <!-- Pure CSS Checkbox Toggle for Mobile Menu -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Toggle navigation menu">
+      
+      <!-- Hamburger Icon Label -->
+      <label for="nav-toggle" class="mobile-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Desktop & Mobile Navigation Menu -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <a href="index.html#home" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="programs.html" class="nav-link">Programs</a>
+        <a href="tasks.html" class="nav-link active">Internship Tasks</a>
+        <a href="index.html#benefits" class="nav-link">Why Join</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="nav-cta">
+        <a href="form.html" class="btn btn-primary" id="nav-apply-btn">
+          <span>Apply Now</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         1. TASKS HERO SECTION
+         ========================================================================== -->
+    <section class="hero" id="tasks-hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="pulse"></span>
+            <span>Structured 30-Day Practical Roadmap</span>
+          </div>
+
+          <h1 class="hero-title">
+            The 8-Task <span class="text-gradient">Internship Journey</span>
+          </h1>
+
+          <p class="hero-tagline">
+            Bridging Learning to Real-World Experience
+          </p>
+
+          <p class="hero-description">
+            TechBridge by <strong>Baselink Services Limited</strong> provides a structured 30-day practical curriculum consisting of 8 hands-on task assignments. Interns progressively build real web platforms, advancing from foundational HTML/CSS to complete production-ready platforms.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="form.html" class="btn btn-primary">
+              <span>Apply for Internship</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#tasks-roadmap" class="btn btn-secondary">
+              <span>Explore All 8 Tasks ↓</span>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number text-gradient">8 Tasks</span>
+              <span class="stat-label">Practical Milestones</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number text-gradient">Day 1-26</span>
+              <span class="stat-label">Structured Release</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number text-gradient">100%</span>
+              <span class="stat-label">Portfolio Building</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img src="images/hero-graphic.svg" alt="TechBridge Internship Journey Illustration" class="hero-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         2. PROGRESSION & DIFFICULTY OVERVIEW
+         ========================================================================== -->
+    <section class="programs-section" style="padding-bottom: 2rem;">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-tag">Learning Progression</div>
+          <h2 class="section-title">How Your Skills <span class="text-gradient">Evolve Step-by-Step</span></h2>
+          <p class="section-subtitle">
+            The internship is designed to take you from foundational basics to advanced web architecture over 30 days.
+          </p>
+        </div>
+
+        <div class="progression-bar-container glass-panel">
+          <div class="progression-step-box">
+            <span class="prog-day">Day 1</span>
+            <span class="prog-label">Homepage</span>
+            <span class="diff-tag diff-beginner">Beginner</span>
+          </div>
+
+          <div class="progression-arrow">→</div>
+
+          <div class="progression-step-box">
+            <span class="prog-day">Day 4</span>
+            <span class="prog-label">Programs Page</span>
+            <span class="diff-tag diff-beg-int">Beg → Int</span>
+          </div>
+
+          <div class="progression-arrow">→</div>
+
+          <div class="progression-step-box">
+            <span class="prog-day">Day 8</span>
+            <span class="prog-label">Tasks Roadmap</span>
+            <span class="diff-tag diff-intermediate">Intermediate</span>
+          </div>
+
+          <div class="progression-arrow">→</div>
+
+          <div class="progression-step-box">
+            <span class="prog-day">Day 11</span>
+            <span class="prog-label">Task Tracker</span>
+            <span class="diff-tag diff-intermediate">Intermediate</span>
+          </div>
+
+          <div class="progression-arrow">→</div>
+
+          <div class="progression-step-box">
+            <span class="prog-day">Day 15</span>
+            <span class="prog-label">Registration</span>
+            <span class="diff-tag diff-int-adv">Int → Adv</span>
+          </div>
+
+          <div class="progression-arrow">→</div>
+
+          <div class="progression-step-box">
+            <span class="prog-day">Day 19</span>
+            <span class="prog-label">Submissions</span>
+            <span class="diff-tag diff-int-adv">Int → Adv</span>
+          </div>
+
+          <div class="progression-arrow">→</div>
+
+          <div class="progression-step-box">
+            <span class="prog-day">Day 22</span>
+            <span class="prog-label">Dashboard</span>
+            <span class="diff-tag diff-advanced">Advanced</span>
+          </div>
+
+          <div class="progression-arrow">→</div>
+
+          <div class="progression-step-box">
+            <span class="prog-day">Day 26</span>
+            <span class="prog-label">Full Platform</span>
+            <span class="diff-tag diff-capstone">Capstone</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. 8-TASK INTERNSHIP ROADMAP GRID
+         ========================================================================== -->
+    <section class="programs-section" id="tasks-roadmap">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-tag">Complete Task Curriculum</div>
+          <h2 class="section-title">Explore All <span class="text-gradient">8 Practical Tasks</span></h2>
+          <p class="section-subtitle">
+            Click on any task to view detailed objectives, skills practiced, and project deliverables.
+          </p>
+        </div>
+
+        <div class="tasks-grid">
+          
+          <!-- TASK 1 -->
+          <details class="glass-panel task-card" open>
+            <summary class="task-card-summary">
+              <div class="task-header-left">
+                <span class="task-number-badge">Task 01</span>
+                <span class="task-day-badge">Day 1</span>
+              </div>
+              <div class="task-title-wrap">
+                <h3 class="task-card-title">Build the TechBridge Homepage</h3>
+                <span class="diff-tag diff-beginner">Beginner</span>
+              </div>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="task-card-content">
+              <p class="task-brief-desc">
+                Create the first version of the TechBridge website using structured HTML5 and CSS3 to establish the organization's online presence.
+              </p>
+              <div class="task-skills-list">
+                <span class="skill-tag">HTML5 Structure</span>
+                <span class="skill-tag">CSS3 Layouts</span>
+                <span class="skill-tag">Brand Identity</span>
+                <span class="skill-tag">Responsive Viewports</span>
+              </div>
+              <div class="task-deliverables-box">
+                <h4>🎯 Key Milestone &amp; Deliverables:</h4>
+                <ul>
+                  <li>Header with TechBridge logo, tagline, and navigation bar.</li>
+                  <li>Hero banner introducing TechBridge by Baselink Services Limited.</li>
+                  <li>Cards introducing Data Analytics and Web Development tracks.</li>
+                  <li>Footer with official contact email: <code>techbridgebaslink@gmail.com</code>.</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+
+          <!-- TASK 2 -->
+          <details class="glass-panel task-card" open>
+            <summary class="task-card-summary">
+              <div class="task-header-left">
+                <span class="task-number-badge">Task 02</span>
+                <span class="task-day-badge">Day 4</span>
+              </div>
+              <div class="task-title-wrap">
+                <h3 class="task-card-title">Build the TechBridge Programs Experience</h3>
+                <span class="diff-tag diff-beg-int">Beginner → Intermediate</span>
+              </div>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="task-card-content">
+              <p class="task-brief-desc">
+                Create a dedicated Programs experience (`programs.html`) that presents TechBridge's available learning programs clearly to prospective interns.
+              </p>
+              <div class="task-skills-list">
+                <span class="skill-tag">Multipage Routing</span>
+                <span class="skill-tag">Program Differentiation</span>
+                <span class="skill-tag">Syllabus Breakdown</span>
+                <span class="skill-tag">Glassmorphic Cards</span>
+              </div>
+              <div class="task-deliverables-box">
+                <h4>🎯 Key Milestone &amp; Deliverables:</h4>
+                <ul>
+                  <li>Differentiate Data Analytics (*Data &amp; Insights*) vs Web Development (*Web &amp; Apps*).</li>
+                  <li>Detailed syllabus for Spreadsheet Analysis, Data Cleaning, SQL, HTML, CSS, and Git.</li>
+                  <li>Official application CTA button linking to Google Form.</li>
+                  <li>Interconnected navigation linking back to `index.html`.</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+
+          <!-- TASK 3 -->
+          <details class="glass-panel task-card" open>
+            <summary class="task-card-summary">
+              <div class="task-header-left">
+                <span class="task-number-badge">Task 03</span>
+                <span class="task-day-badge">Day 8</span>
+              </div>
+              <div class="task-title-wrap">
+                <h3 class="task-card-title">Build the Internship Tasks Experience</h3>
+                <span class="diff-tag diff-intermediate">Intermediate</span>
+              </div>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="task-card-content">
+              <p class="task-brief-desc">
+                Create an interface (`tasks.html`) that presents the 8 TechBridge internship tasks and helps users understand the complete 30-day learning journey.
+              </p>
+              <div class="task-skills-list">
+                <span class="skill-tag">Curriculum Mapping</span>
+                <span class="skill-tag">Sequence Timeline</span>
+                <span class="skill-tag">Difficulty Tiers</span>
+                <span class="skill-tag">Pure HTML5 Details</span>
+              </div>
+              <div class="task-deliverables-box">
+                <h4>🎯 Key Milestone &amp; Deliverables:</h4>
+                <ul>
+                  <li>Display all 8 tasks with Day numbers, titles, and descriptions.</li>
+                  <li>Visual progression indicators from Day 1 to Day 26.</li>
+                  <li>Difficulty progression badges (*Beginner* to *Advanced Capstone*).</li>
+                  <li>Seamless navigation connecting Home, Programs, Tasks, and Apply pages.</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+
+          <!-- TASK 4 -->
+          <details class="glass-panel task-card">
+            <summary class="task-card-summary">
+              <div class="task-header-left">
+                <span class="task-number-badge">Task 04</span>
+                <span class="task-day-badge">Day 11</span>
+              </div>
+              <div class="task-title-wrap">
+                <h3 class="task-card-title">Build an Interactive Task Tracker</h3>
+                <span class="diff-tag diff-intermediate">Intermediate</span>
+              </div>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="task-card-content">
+              <p class="task-brief-desc">
+                Use JavaScript DOM manipulation to make the internship task experience interactive, allowing interns to mark completion and track their progress.
+              </p>
+              <div class="task-skills-list">
+                <span class="skill-tag">JavaScript DOM</span>
+                <span class="skill-tag">Event Handlers</span>
+                <span class="skill-tag">Progress State</span>
+                <span class="skill-tag">LocalStorage API</span>
+              </div>
+              <div class="task-deliverables-box">
+                <h4>🎯 Key Milestone &amp; Deliverables:</h4>
+                <ul>
+                  <li>Interactive checkboxes to toggle task completion status.</li>
+                  <li>Dynamic progress bar updating completion percentage (e.g. 3/8 Tasks Done).</li>
+                  <li>Task filtering by difficulty tier or release status.</li>
+                  <li>Persistent progress state saved in browser LocalStorage.</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+
+          <!-- TASK 5 -->
+          <details class="glass-panel task-card">
+            <summary class="task-card-summary">
+              <div class="task-header-left">
+                <span class="task-number-badge">Task 05</span>
+                <span class="task-day-badge">Day 15</span>
+              </div>
+              <div class="task-title-wrap">
+                <h3 class="task-card-title">Build the Intern Registration Experience</h3>
+                <span class="diff-tag diff-int-adv">Intermediate → Advanced</span>
+              </div>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="task-card-content">
+              <p class="task-brief-desc">
+                Create a professional registration and onboarding interface for TechBridge interns to sign up, select their track, and create their profile.
+              </p>
+              <div class="task-skills-list">
+                <span class="skill-tag">Form Controls</span>
+                <span class="skill-tag">Field Validations</span>
+                <span class="skill-tag">User Onboarding</span>
+                <span class="skill-tag">State Capture</span>
+              </div>
+              <div class="task-deliverables-box">
+                <h4>🎯 Key Milestone &amp; Deliverables:</h4>
+                <ul>
+                  <li>Input fields for Intern Name, Email, Preferred Track, and Experience Level.</li>
+                  <li>Real-time client-side form validation error indicators.</li>
+                  <li>Onboarding confirmation step with cohort details.</li>
+                  <li>Clean user profile creation state.</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+
+          <!-- TASK 6 -->
+          <details class="glass-panel task-card">
+            <summary class="task-card-summary">
+              <div class="task-header-left">
+                <span class="task-number-badge">Task 06</span>
+                <span class="task-day-badge">Day 19</span>
+              </div>
+              <div class="task-title-wrap">
+                <h3 class="task-card-title">Build the Task Submission System</h3>
+                <span class="diff-tag diff-int-adv">Intermediate → Advanced</span>
+              </div>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="task-card-content">
+              <p class="task-brief-desc">
+                Create an interface through which interns can prepare, review, and submit their completed task work (GitHub Repository URL &amp; Live Demo URL).
+              </p>
+              <div class="task-skills-list">
+                <span class="skill-tag">Submission Form</span>
+                <span class="skill-tag">URL Validation</span>
+                <span class="skill-tag">Developer Notes</span>
+                <span class="skill-tag">Receipt Verification</span>
+              </div>
+              <div class="task-deliverables-box">
+                <h4>🎯 Key Milestone &amp; Deliverables:</h4>
+                <ul>
+                  <li>Task selection dropdown linked to active tasks.</li>
+                  <li>URL validation for GitHub Repo and Live Web Deployment links.</li>
+                  <li>Developer note text area (3-5 sentences summarizing project learnings).</li>
+                  <li>Submission receipt dialog confirming successful upload.</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+
+          <!-- TASK 7 -->
+          <details class="glass-panel task-card">
+            <summary class="task-card-summary">
+              <div class="task-header-left">
+                <span class="task-number-badge">Task 07</span>
+                <span class="task-day-badge">Day 22</span>
+              </div>
+              <div class="task-title-wrap">
+                <h3 class="task-card-title">Build the Intern Dashboard</h3>
+                <span class="diff-tag diff-advanced">Advanced</span>
+              </div>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="task-card-content">
+              <p class="task-brief-desc">
+                Create a comprehensive dashboard where an intern can view their profile details, overall completion progress, task history, and submission statuses.
+              </p>
+              <div class="task-skills-list">
+                <span class="skill-tag">Dashboard Layout</span>
+                <span class="skill-tag">Metric Cards</span>
+                <span class="skill-tag">Submission History</span>
+                <span class="skill-tag">Progress Analytics</span>
+              </div>
+              <div class="task-deliverables-box">
+                <h4>🎯 Key Milestone &amp; Deliverables:</h4>
+                <ul>
+                  <li>Intern profile summary widget with track status.</li>
+                  <li>Stat metrics: Total Tasks Submitted, Completion Percentage, Recommendation Eligibility.</li>
+                  <li>Submission history table displaying submitted tasks and reviewer notes.</li>
+                  <li>Quick action buttons for submitting next available tasks.</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+
+          <!-- TASK 8 -->
+          <details class="glass-panel task-card">
+            <summary class="task-card-summary">
+              <div class="task-header-left">
+                <span class="task-number-badge">Task 08</span>
+                <span class="task-day-badge">Day 26</span>
+              </div>
+              <div class="task-title-wrap">
+                <h3 class="task-card-title">Build the Complete TechBridge Platform</h3>
+                <span class="diff-tag diff-capstone">Advanced Capstone</span>
+              </div>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="task-card-content">
+              <p class="task-brief-desc">
+                Combine the different components created during the 30-day internship into a complete, unified, and production-ready TechBridge Internship Platform.
+              </p>
+              <div class="task-skills-list">
+                <span class="skill-tag">System Integration</span>
+                <span class="skill-tag">End-to-End Routing</span>
+                <span class="skill-tag">Unified State</span>
+                <span class="skill-tag">Capstone Launch</span>
+              </div>
+              <div class="task-deliverables-box">
+                <h4>🎯 Key Milestone &amp; Deliverables:</h4>
+                <ul>
+                  <li>Seamless integration of Home, Programs, Tasks, Tracker, Registration, Submission, and Dashboard.</li>
+                  <li>Full cross-browser and mobile responsive testing.</li>
+                  <li>Production bundle deployment to GitHub Pages or Netlify.</li>
+                  <li>Final evaluation for Baselink Services Limited Recommendation Letter.</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. CALL TO ACTION SECTION
+         ========================================================================== -->
+    <section class="cta-section" id="apply">
+      <div class="container">
+        <div class="cta-box" id="community">
+          <div class="section-tag" style="background: rgba(16, 208, 0, 0.15); border-color: rgba(16, 208, 0, 0.4);">Start Your 30-Day Journey</div>
+          <h2 class="cta-title">Ready to Complete Your <span class="text-gradient">First Internship Task?</span></h2>
+          <p class="cta-desc">
+            Take the first step towards building real-world software &amp; analytics projects. Submit your application today.
+          </p>
+
+          <div class="cta-actions">
+            <!-- Official Application Form Page Link -->
+            <a href="form.html" class="btn btn-primary" id="official-apply-btn" style="padding: 1rem 2.25rem; font-size: 1.05rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              <span>TechBridge Internship Application Form</span>
+            </a>
+
+            <!-- Return to Homepage Link -->
+            <a href="index.html" class="btn btn-secondary" style="padding: 1rem 2rem; font-size: 1.05rem;">
+              <span>← Back to Homepage</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       5. FOOTER & OFFICIAL CONTACT
+       ========================================================================== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Footer Column 1: Brand Info -->
+        <div class="footer-brand">
+          <a href="index.html" aria-label="TechBridge Home">
+            <img src="images/logo.png" alt="TechBridge Logo" style="height: 64px; width: auto;">
+          </a>
+          <p>
+            <strong>TechBridge</strong> by <strong>Baselink Services Limited</strong>.<br>
+            Bridging Learning to Real-World Experience.
+          </p>
+        </div>
+
+        <!-- Footer Column 2: Quick Links -->
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About TechBridge</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="tasks.html">Internship Tasks</a></li>
+            <li><a href="index.html#benefits">Benefits</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Column 3: Internship Tracks -->
+        <div>
+          <h4 class="footer-col-title">Programs</h4>
+          <ul class="footer-links">
+            <li><a href="programs.html#data-analytics-detail">Data Analytics</a></li>
+            <li><a href="programs.html#web-dev-detail">Web Development</a></li>
+            <li><a href="form.html">Application Form</a></li>
+            <li><a href="index.html#community">WhatsApp Group</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Column 4: Official Contact -->
+        <div>
+          <h4 class="footer-col-title">Official Contact</h4>
+          <div class="footer-contact-box">
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">Have questions or inquiries?</p>
+            <a href="mailto:techbridgebaslink@gmail.com" class="footer-email-link" aria-label="Send email to techbridgebaslink@gmail.com">
+              <div class="email-icon-badge">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <span class="email-address-text">techbridgebaslink@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 TechBridge by Baselink Services Limited. All rights reserved.
+        </div>
+        <div>
+          Tasks 1, 2 &amp; 3 — TechBridge Web Development Internship
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
