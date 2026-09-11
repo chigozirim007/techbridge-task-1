@@ -1753,4 +1753,303 @@ details.task-card[open] .faq-icon {
   }
 }
 
+/* ==========================================================================
+   17. Task 4 Interactive Internship Roadmap Switcher Styles
+   ========================================================================== */
+.track-selector-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto 2.5rem auto;
+  max-width: 850px;
+  text-align: center;
+}
+
+.track-selector-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-green);
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.track-switcher-nav {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.85);
+  padding: 0.4rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  gap: 0.5rem;
+  max-width: 100%;
+}
+
+.track-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-full);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.track-tab-btn svg {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.track-tab-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.track-tab-btn:hover svg {
+  transform: scale(1.08);
+}
+
+/* Active Track Button State */
+.track-tab-btn.active {
+  color: #FFFFFF;
+  background: linear-gradient(135deg, rgba(16, 208, 0, 0.25) 0%, rgba(43, 56, 240, 0.35) 100%);
+  border-color: rgba(16, 208, 0, 0.5);
+  box-shadow: 0 0 20px rgba(16, 208, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.track-tab-btn.active svg {
+  stroke: var(--accent-green);
+}
+
+#btn-track-data.active {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.25) 0%, rgba(37, 99, 235, 0.35) 100%);
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+#btn-track-data.active svg {
+  stroke: #38BDF8;
+}
+
+.track-code-pill {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.725rem;
+  padding: 0.2rem 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.track-tab-btn.active .track-code-pill {
+  background: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+}
+
+/* Currently Viewing Status Card */
+.currently-viewing-card {
+  max-width: 1000px;
+  margin: 0 auto 2.5rem auto;
+  padding: 1.75rem 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(16, 208, 0, 0.3);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(11, 19, 43, 0.9) 100%);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.currently-viewing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-green);
+  border-radius: 4px 0 0 4px;
+}
+
+.viewing-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.viewing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.viewing-badge strong {
+  color: var(--accent-green);
+}
+
+.live-indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  box-shadow: 0 0 10px var(--accent-green);
+  animation: livePulse 2s infinite ease-in-out;
+}
+
+@keyframes livePulse {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+.internship-duration-tag {
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: #38BDF8;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.viewing-track-title {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+}
+
+.viewing-track-desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  max-width: 800px;
+}
+
+.viewing-track-stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.stat-pill-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.stat-pill-val {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Timeline interaction */
+.progression-step-box {
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.progression-step-box:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.progression-step-box:focus-visible {
+  outline: 2px solid var(--accent-green);
+  outline-offset: 2px;
+}
+
+/* Card highlight animation when jumped to from timeline */
+.task-card-highlight {
+  border-color: var(--accent-green) !important;
+  box-shadow: 0 0 25px rgba(16, 208, 0, 0.35) !important;
+  transition: all 0.3s ease;
+}
+
+.task-notes-desc {
+  font-size: 0.925rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+/* Responsive Breakpoints for Track Switcher */
+@media (max-width: 640px) {
+  .track-switcher-nav {
+    flex-direction: column;
+    width: 100%;
+    border-radius: var(--radius-md);
+    padding: 0.5rem;
+  }
+
+  .track-tab-btn {
+    width: 100%;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .currently-viewing-card {
+    padding: 1.25rem;
+  }
+
+  .viewing-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .viewing-track-stats {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .stat-pill {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
 
