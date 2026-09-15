@@ -1,4 +1,4 @@
-# TechBridge Platform — Tasks 1, 2, 3 & 4
+# TechBridge Platform — Tasks 1, 2, 3, 4 & 5
 
 **Organization**: TechBridge by Baselink Services Limited  
 **Tagline**: Bridging Learning to Real-World Experience  
@@ -7,17 +7,24 @@
 
 ---
 
-## 📝 Developer Note (Task 4: Interactive Internship Task Tracker)
+## 📝 Developer Note (Task 5: TechBridge Challenge Hub)
 
-In **Task 4**, I developed the **Interactive Two-Track Internship Roadmap** (`tasks.html` & `tracker.js`), introducing Vanilla JavaScript to the TechBridge platform without any external frameworks (no React, Vue, or Next.js).
+In **Task 5**, I developed the **Interactive TechBridge Challenge Hub** (`challenges.html` & `challenges.js`), answering the question: *"What kind of challenges will I actually be working on during the internship?"*.
 
-A visitor can now seamlessly switch between the **Data Analytics** and **Web Development** tracks without refreshing the page. The application demonstrates core JavaScript fundamentals:
-1. **Variables**: Managing application state (`currentTrack`).
-2. **Arrays & Objects**: Storing full curriculum data for both 8-task tracks (tasks, days, titles, descriptions, difficulty tiers, competencies, and deliverables).
-3. **Functions**: Modular rendering functions (`renderTrackHeader`, `renderTimeline`, `renderTaskCards`, `switchTrack`).
-4. **Event Listeners**: Click & keyboard event handlers on segmented tab buttons and timeline milestones.
-5. **Conditional Logic**: Validating track keys, setting dynamic styling classes, and toggling ARIA attributes.
-6. **DOM Manipulation**: Updating the "Currently Viewing" status banner, 30-day timeline nodes, and task cards in real-time.
+Rather than just listing the tracks, visitors can now explore **20 realistic, practical challenges** (10 Data Analytics + 10 Web Development) structured across the **30-day internship timeline** (from Day 2 up to the Day 30 Capstones).
+
+### Core Features:
+1. **30-Day Spanning Curriculum (20 Challenges)**:
+   - **Data Analytics Track**: 10 challenges covering data cleaning, multi-branch formulas & pivot tables, demographic segmentation, executive dashboards, SQL querying, multi-table joins, supply chain wrangling (XLOOKUP), SaaS churn analytics, e-commerce deep-dive, and enterprise BI capstone.
+   - **Web Development Track**: 10 challenges covering startup landing pages, portfolio grids, form validation UI, e-commerce product catalogs, personal budget trackers, dynamic quiz apps, Kanban task boards, weather API dashboards, intern analytics portals, and unified enterprise capstone platforms.
+2. **Interactive Dual-Level Filtering**:
+   - **Track Filter**: `All Tracks` | `Data Analytics` | `Web Development`
+   - **Difficulty Filter**: `All Levels` | `Beginner` | `Intermediate` | `Advanced`
+   - Both filters work in harmony with active glowing visual indicators.
+3. **Real-Time Keyword Search**: Instant search filtering challenges across titles, descriptions, competencies, and day milestones.
+4. **Interactive Modal Popups**: Clicking "View Challenge" opens a rich project brief modal without refreshing the page, displaying the objective, skills practiced, tools used, deliverables checklist, estimated time, and expected results.
+5. **Dynamic Counter & Empty State**: Live counter badge (e.g. *"Showing 20 of 20 Challenges"*) and a dedicated empty state with a 1-click *"Reset All Filters"* action.
+6. **Zero Frameworks**: 100% pure HTML5, CSS3, and modern Vanilla JavaScript with keyboard accessibility (ESC to close, focus trapping).
 
 ---
 
@@ -27,11 +34,13 @@ A visitor can now seamlessly switch between the **Data Analytics** and **Web Dev
 techbridge-task-1/
 ├── index.html          # TechBridge Homepage (Task 1)
 ├── programs.html       # TechBridge Dedicated Programs Experience (Task 2)
-├── tasks.html          # Interactive Two-Track Roadmap Interface (Tasks 3 & 4)
-├── tracker.js          # Pure Vanilla JavaScript Interactive Task Tracker (Task 4)
+├── tasks.html          # Interactive Two-Track Roadmap (Tasks 3 & 4)
+├── tracker.js          # Two-Track Task Switcher Engine (Task 4)
+├── challenges.html     # Interactive TechBridge Challenge Hub (Task 5)
+├── challenges.js       # 30-Day Challenge Engine & Filtering System (Task 5)
 ├── form.html           # Official Application Portal & Navigation Page
-├── style.css           # Pure CSS3 Design System & Responsive Rules
-├── README.md           # Developer Documentation & Notes
+├── style.css           # Complete Pure CSS3 Design System & Responsive Rules
+├── README.md           # Developer Documentation & Progress Notes
 └── images/
     ├── logo.png                # Official TechBridge Logo Image
     ├── logo.jpg                # Official TechBridge Logo Copy
@@ -45,40 +54,44 @@ techbridge-task-1/
 
 ---
 
-## 📊 Official Two-Track Curriculum Comparison
-
-### 💻 Web Development Track (`WD-30`)
-| Task | Title | Day | Difficulty | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| **Task 1** | Build the TechBridge Homepage | Day 1 | `Beginner` | Create the first version of the TechBridge website using HTML and CSS. |
-| **Task 2** | Build the TechBridge Programs Experience | Day 4 | `Beginner` | Create a Programs experience presenting TechBridge's available learning programs. |
-| **Task 3** | Build the Internship Tasks Experience | Day 8 | `Beginner → Intermediate` | Create an interface that presents the TechBridge internship tasks and helps users understand the internship journey. |
-| **Task 4** | Build an Interactive Internship Roadmap | Day 11 | `Beginner → Intermediate` | Use JavaScript to allow visitors to switch between the Data Analytics and Web Development internship tracks. |
-| **Task 5** | Build the Intern Registration Experience | Day 15 | `Intermediate` | Create a professional registration and onboarding interface for TechBridge interns. |
-| **Task 6** | Build the Task Submission System | Day 19 | `Intermediate` | Create an interface through which interns can prepare and submit their task work. |
-| **Task 7** | Build the Intern Dashboard | Day 22 | `Intermediate` | Create a dashboard where an intern can view their profile, progress, tasks and submissions. |
-| **Task 8** | Build the Complete TechBridge Internship Platform | Day 26 | `Intermediate` | Combine the different components created during the internship into a complete TechBridge platform. |
+## 🎯 30-Day Challenge Hub Curriculum (20 Challenges)
 
 ### 📈 Data Analytics Track (`DA-30`)
-| Task | Title | Day | Difficulty | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| **Task 1** | Data Cleaning Basics | Day 1 | `Beginner` | Clean a messy dataset using Google Sheets or Excel. Identify and fix duplicate rows, blank cells, inconsistent formatting, and incorrect data types. |
-| **Task 2** | Formulas & Pivot Tables | Day 4 | `Beginner` | Use spreadsheet formulas and Pivot Tables to answer questions and extract useful insights from a dataset. |
-| **Task 3** | Data Visualization | Day 8 | `Beginner → Intermediate` | Create charts and a simple dashboard that communicate useful insights from a dataset. |
-| **Task 4** | Introduction to SQL | Day 11 | `Beginner → Intermediate` | Practice basic SQL queries and use them to answer real-world questions about data. |
-| **Task 5** | SQL Joins & Aggregations | Day 15 | `Intermediate` | Use JOIN, GROUP BY and aggregate functions such as COUNT, SUM and AVG to analyze information across multiple tables. |
-| **Task 6** | Lookup Functions & Data Wrangling | Day 19 | `Intermediate` | Use VLOOKUP or XLOOKUP to combine related datasets and handle data mismatches. |
-| **Task 7** | Mini Analysis Project | Day 22 | `Intermediate` | Complete a small end-to-end analysis involving data cleaning, formulas, Pivot Tables, charts and recommendations. |
-| **Task 8** | Capstone Project | Day 26 | `Intermediate` | Complete a larger project combining spreadsheet analysis and SQL using at least two related tables. |
+1. **Day 2**: *Retail Store Sales Data Cleaning* | `Beginner` | 2–3 hours | Google Sheets / Excel
+2. **Day 5**: *Multi-Branch Revenue & Expense Analysis* | `Beginner` | 3–4 hours | Pivot Tables & Conditional Formulas
+3. **Day 8**: *Customer Demographics & Behavior Segmentation* | `Beginner → Intermediate` | 3–4 hours | Nested Logic & RFM Tiers
+4. **Day 11**: *Executive KPI Sales Performance Dashboard* | `Beginner → Intermediate` | 4–5 hours | Interactive Slicers & Scorecards
+5. **Day 14**: *Introduction to SQL Querying & Order Extraction* | `Beginner → Intermediate` | 3–4 hours | SELECT, WHERE, ORDER BY, LIMIT
+6. **Day 17**: *Multi-Table SQL Joins & Product Sales Aggregations* | `Intermediate` | 4–5 hours | INNER/LEFT JOIN, GROUP BY, HAVING
+7. **Day 20**: *Supply Chain Inventory Wrangling with XLOOKUP* | `Intermediate` | 3–4 hours | XLOOKUP, IFERROR, Dynamic Arrays
+8. **Day 23**: *SaaS Customer Churn & Retention Analytics* | `Intermediate` | 4–5 hours | Churn Modeling & Cohort Analysis
+9. **Day 26**: *End-to-End E-Commerce Performance Deep-Dive* | `Advanced` | 5–6 hours | Multi-Table SQL + Financial Modeling
+10. **Day 30**: *Enterprise Business Intelligence Capstone* | `Advanced` | 6–8 hours | Full Enterprise Turnaround Intelligence
+
+### 💻 Web Development Track (`WD-30`)
+1. **Day 2**: *Modern Startup Landing Page with Semantic HTML5 & CSS3* | `Beginner` | 2–3 hours | HTML5, Flexbox, CSS Variables
+2. **Day 5**: *Developer Portfolio Website with Dynamic Theme & Project Grid* | `Beginner` | 3–4 hours | CSS Grid, Card Layouts
+3. **Day 8**: *Interactive Contact Form with Validation & Feedback UI* | `Beginner → Intermediate` | 3–4 hours | Form Validation & ARIA
+4. **Day 11**: *Responsive E-Commerce Product Showcase & Filter System* | `Beginner → Intermediate` | 4–5 hours | DOM Generation, Array Methods
+5. **Day 14**: *Interactive Personal Expense & Budget Tracker* | `Beginner → Intermediate` | 4–5 hours | CRUD DOM, LocalStorage
+6. **Day 17**: *Dynamic Quiz & Knowledge Assessment Web App* | `Intermediate` | 4–5 hours | Timing Functions, State Machines
+7. **Day 20**: *Kanban Task Management Board with Drag & Drop Simulation* | `Intermediate` | 5–6 hours | Workflow UI, Task Columns
+8. **Day 23**: *Weather Forecast App with REST API Integration Simulation* | `Intermediate` | 4–5 hours | Async/Await, JSON Parsing
+9. **Day 26**: *Full-Featured Intern Dashboard & Analytics Portal* | `Advanced` | 5–6 hours | Dashboard Grid, Metrics Cards
+10. **Day 30**: *Unified Enterprise Web Platform Capstone* | `Advanced` | 6–8 hours | Modular Architecture, Production Capstone
 
 ---
 
 ## 🧪 Testing & Verification Checklist
 
-- [x] **Test 1 — Initial Page Load**: Web Development track renders by default with "Currently Viewing: WEB DEVELOPMENT", 30-day timeline nodes, and all 8 tasks.
-- [x] **Test 2 — Data Analytics Switch**: Clicking `[ Data Analytics ]` instantly updates the status badge to "Currently Viewing: DATA ANALYTICS", updates the 30-day progression timeline, and renders all 8 Data Analytics tasks with exact days, titles, descriptions, and difficulty badges.
-- [x] **Test 3 — Web Development Switch**: Clicking `[ Web Development ]` smoothly switches back without browser reload.
-- [x] **Test 4 — Multi-Switch Stability**: Repeated switching confirms state consistency, zero console errors, and instant DOM updates.
-- [x] **Test 5 — Timeline Interaction**: Clicking any day milestone node smoothly scrolls to and highlights the target task card.
-- [x] **Test 6 — Responsive Design**: Fully responsive across Desktop (>1024px), Tablet (768px-1023px), and Mobile down to 400px.
-- [x] **Test 7 — Navigation Interconnectivity**: Nav links between Home (`index.html`), Programs (`programs.html`), Tasks (`tasks.html`), and Form (`form.html`) are completely functional.
+- [x] **Challenge Hub Page**: Accessible at `challenges.html` with introduction, stats, and unified header/footer.
+- [x] **30-Day Coverage**: 20 challenges spanning Days 2 to 30 (10 Data Analytics + 10 Web Development).
+- [x] **Track Filtering**: Switching between *All Tracks*, *Data Analytics*, and *Web Development* instantly re-renders the cards without page reload.
+- [x] **Difficulty Filtering**: Filtering by *Beginner*, *Intermediate*, or *Advanced* updates results accurately.
+- [x] **Combined Filtering**: Track filter + difficulty filter work together simultaneously.
+- [x] **Real-Time Search**: Instant keyword search filters challenges across titles, descriptions, and skills.
+- [x] **Interactive Modal Dialog**: Clicking "View Challenge" opens a modal displaying objective, skills, tools, deliverables, time, and expected results.
+- [x] **Modal Accessibility**: Closes on close button click, backdrop click, or ESC keyboard press. Body scroll locked while open.
+- [x] **Empty State & Reset**: Clear empty state rendered when no challenges match, with a working *"Reset All Filters"* button.
+- [x] **Cross-Page Navigation**: Navigation menu and footer updated across `index.html`, `programs.html`, `tasks.html`, `challenges.html`, and `form.html`.
+- [x] **Responsive Design**: Tested and optimized down to 400px minimum width.

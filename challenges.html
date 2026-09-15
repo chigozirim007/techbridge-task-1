@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechBridge Challenge Hub | 30-Day Practical Challenges</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Explore realistic practical challenges across Data Analytics and Web Development tracks designed for TechBridge interns over a 30-day structured period. Filter by track, difficulty, and view detailed project briefs.">
+  <meta name="keywords" content="TechBridge Challenge Hub, 30-Day Internship Challenges, Data Analytics Challenges, Web Development Challenges, Coding Challenges, Practical Internship Experience">
+  <meta name="author" content="TechBridge by Baselink Services Limited">
+  
+  <!-- OpenGraph Social Sharing -->
+  <meta property="og:title" content="TechBridge Challenge Hub — 30-Day Practical Challenges">
+  <meta property="og:description" content="Explore 20 realistic practical challenges spanning the 30-day internship across Data Analytics and Web Development.">
+  <meta property="og:image" content="images/hero-graphic.svg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Main External Stylesheet (Pure CSS3) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION (Shared Brand Layout)
+       ========================================================================== -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <!-- TechBridge Logo -->
+      <a href="index.html" class="logo-link" aria-label="TechBridge Homepage">
+        <img src="images/logo.png" alt="TechBridge Logo" class="logo-img">
+      </a>
+
+      <!-- Pure CSS Checkbox Toggle for Mobile Menu -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Toggle navigation menu">
+      
+      <!-- Hamburger Icon Label -->
+      <label for="nav-toggle" class="mobile-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Desktop & Mobile Navigation Menu -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <a href="index.html#home" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="programs.html" class="nav-link">Programs</a>
+        <a href="tasks.html" class="nav-link">Internship Tasks</a>
+        <a href="challenges.html" class="nav-link active">Challenge Hub</a>
+        <a href="index.html#benefits" class="nav-link">Why Join</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="nav-cta">
+        <a href="form.html" class="btn btn-primary" id="nav-apply-btn">
+          <span>Apply Now</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         1. CHALLENGE HUB HERO SECTION
+         ========================================================================== -->
+    <section class="hero" id="challenges-hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="pulse"></span>
+            <span>30-Day Practical Challenge Hub</span>
+          </div>
+
+          <h1 class="hero-title">
+            TechBridge <span class="text-gradient">Challenge Hub</span>
+          </h1>
+
+          <p class="hero-tagline">
+            Explore Practical Challenges • 30-Day Period • Real-World Skills
+          </p>
+
+          <p class="hero-description">
+            Explore practical challenges designed to help TechBridge interns apply their skills and gain real-world experience. Browse <strong>20 realistic challenges</strong> spanning the full <strong>30-day internship</strong> across <strong>Data Analytics</strong> and <strong>Web Development</strong>. Filter by track or difficulty, search by keyword, and click any challenge to view its complete project brief.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#explore-challenges" class="btn btn-primary">
+              <span>Browse Challenges ↓</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+            </a>
+            <a href="tasks.html" class="btn btn-secondary">
+              <span>View 30-Day Task Roadmap</span>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number text-gradient">20 Challenges</span>
+              <span class="stat-label">10 Per Track</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number text-gradient">30 Days</span>
+              <span class="stat-label">Progressive Timeline</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number text-gradient">3 Tiers</span>
+              <span class="stat-label">Beg → Int → Adv</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img src="images/hero-graphic.svg" alt="TechBridge Challenge Hub Illustration" class="hero-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         2. INTERACTIVE FILTERING & SEARCH TOOLBAR
+         ========================================================================== -->
+    <section class="programs-section" id="explore-challenges" style="padding-top: 2rem; padding-bottom: 2rem;">
+      <div class="container">
+        
+        <div class="text-center">
+          <div class="section-tag">Interactive Challenge Explorer</div>
+          <h2 class="section-title">Filter &amp; Discover <span class="text-gradient">Real-World Projects</span></h2>
+          <p class="section-subtitle">
+            Customize your view by track, difficulty level, or search for specific technical competencies.
+          </p>
+        </div>
+
+        <div class="challenge-controls-wrap">
+          <div class="challenge-controls-card glass-panel">
+            
+            <!-- Top Controls Row: Search & Dynamic Results Counter -->
+            <div class="controls-top-row">
+              <div class="search-input-wrap">
+                <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input 
+                  type="text" 
+                  id="challenge-search-input" 
+                  class="challenge-search-input" 
+                  placeholder="Search challenges by title, skill, or keyword (e.g., SQL, Dashboard, Form)..." 
+                  aria-label="Search challenges"
+                >
+              </div>
+
+              <div class="results-count-badge" id="results-count-badge">
+                Showing 20 of 20 Challenges
+              </div>
+            </div>
+
+            <!-- Filters Row: Track Filter & Difficulty Filter -->
+            <div class="filters-row">
+              
+              <!-- Track Filter Group -->
+              <div class="filter-group">
+                <span class="filter-group-label">Filter by Track:</span>
+                <div class="filter-pills-list" role="tablist" aria-label="Filter challenges by track">
+                  <button type="button" class="filter-pill-btn filter-track-btn active" data-track="all">
+                    All Tracks
+                  </button>
+                  <button type="button" class="filter-pill-btn filter-track-btn" data-track="analytics">
+                    Data Analytics
+                  </button>
+                  <button type="button" class="filter-pill-btn filter-track-btn" data-track="webdev">
+                    Web Development
+                  </button>
+                </div>
+              </div>
+
+              <!-- Difficulty Filter Group -->
+              <div class="filter-group">
+                <span class="filter-group-label">Filter by Difficulty:</span>
+                <div class="filter-pills-list" role="tablist" aria-label="Filter challenges by difficulty">
+                  <button type="button" class="filter-pill-btn filter-diff-btn active" data-difficulty="all">
+                    All Levels
+                  </button>
+                  <button type="button" class="filter-pill-btn filter-diff-btn" data-difficulty="Beginner">
+                    Beginner
+                  </button>
+                  <button type="button" class="filter-pill-btn filter-diff-btn" data-difficulty="Intermediate">
+                    Intermediate
+                  </button>
+                  <button type="button" class="filter-pill-btn filter-diff-btn" data-difficulty="Advanced">
+                    Advanced
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ==========================================================================
+             3. DYNAMIC CHALLENGES GRID CONTAINER
+             ========================================================================== -->
+        <div class="challenges-grid" id="challenges-grid">
+          <!-- Populated dynamically via challenges.js -->
+        </div>
+
+        <!-- Empty State Box (Hidden by default) -->
+        <div class="empty-state-box glass-panel" id="empty-state-box" style="display: none;">
+          <div class="empty-state-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+          <h3 class="empty-state-title">No matching challenges found</h3>
+          <p class="empty-state-desc">
+            We couldn't find any challenges matching your current search or filter combination. Try clearing your filters.
+          </p>
+          <button type="button" class="btn btn-primary" id="reset-filters-btn">
+            <span>Reset All Filters</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. CALL TO ACTION SECTION
+         ========================================================================== -->
+    <section class="cta-section" id="apply">
+      <div class="container">
+        <div class="cta-box" id="community">
+          <div class="section-tag" style="background: rgba(16, 208, 0, 0.15); border-color: rgba(16, 208, 0, 0.4);">
+            Ready to Take on These Challenges?
+          </div>
+          <h2 class="cta-title">Apply for the <span class="text-gradient">30-Day Internship</span></h2>
+          <p class="cta-desc">
+            Gain hands-on portfolio experience completing real-world challenges with mentorship and code evaluation.
+          </p>
+
+          <div class="cta-actions">
+            <!-- Official Application Form Page Link -->
+            <a href="form.html" class="btn btn-primary" id="official-apply-btn" style="padding: 1rem 2.25rem; font-size: 1.05rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              <span>TechBridge Internship Application Form</span>
+            </a>
+
+            <!-- Return to Homepage Link -->
+            <a href="tasks.html" class="btn btn-secondary" style="padding: 1rem 2rem; font-size: 1.05rem;">
+              <span>← View 30-Day Task Roadmap</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       5. INTERACTIVE CHALLENGE DETAILS MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="challenge-modal" role="dialog" aria-modal="true" aria-labelledby="modal-challenge-title">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-dialog">
+      <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close challenge details">
+        &times;
+      </button>
+      <div id="modal-body-content">
+        <!-- Injected dynamically via challenges.js when a card is clicked -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       6. FOOTER & OFFICIAL CONTACT
+       ========================================================================== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Footer Column 1: Brand Info -->
+        <div class="footer-brand">
+          <a href="index.html" aria-label="TechBridge Home">
+            <img src="images/logo.png" alt="TechBridge Logo" style="height: 64px; width: auto;">
+          </a>
+          <p>
+            <strong>TechBridge</strong> by <strong>Baselink Services Limited</strong>.<br>
+            Bridging Learning to Real-World Experience.
+          </p>
+        </div>
+
+        <!-- Footer Column 2: Quick Links -->
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About TechBridge</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="tasks.html">Internship Roadmap</a></li>
+            <li><a href="challenges.html">Challenge Hub</a></li>
+            <li><a href="index.html#benefits">Benefits</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Column 3: Internship Tracks -->
+        <div>
+          <h4 class="footer-col-title">Programs</h4>
+          <ul class="footer-links">
+            <li><a href="programs.html#data-analytics-detail">Data Analytics</a></li>
+            <li><a href="programs.html#web-dev-detail">Web Development</a></li>
+            <li><a href="challenges.html">Challenge Hub</a></li>
+            <li><a href="form.html">Application Form</a></li>
+            <li><a href="index.html#community">WhatsApp Group</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Column 4: Official Contact -->
+        <div>
+          <h4 class="footer-col-title">Official Contact</h4>
+          <div class="footer-contact-box">
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">Have questions or inquiries?</p>
+            <a href="mailto:techbridgebaslink@gmail.com" class="footer-email-link" aria-label="Send email to techbridgebaslink@gmail.com">
+              <div class="email-icon-badge">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <span class="email-address-text">techbridgebaslink@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 TechBridge by Baselink Services Limited. All rights reserved.
+        </div>
+        <div>
+          Task 5 — TechBridge Challenge Hub
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       7. JAVASCRIPT: Dynamic Challenge Hub & Filtering Engine
+       ========================================================================== -->
+  <script src="challenges.js" defer></script>
+</body>
+</html>
