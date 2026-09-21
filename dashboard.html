@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intern Dashboard | TechBridge — Progress &amp; Task Tracker</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="TechBridge Intern Dashboard. Track your 30-day internship progress, mark tasks as completed, view task briefs, access the Challenge Hub, and explore modern web technologies.">
+  <meta name="keywords" content="TechBridge Dashboard, Intern Task Tracker, Web Development Internship, Progress Metrics, Next.js, Vue, Angular, Backend Development">
+  <meta name="author" content="TechBridge by Baselink Services Limited">
+  
+  <!-- OpenGraph Social Sharing -->
+  <meta property="og:title" content="TechBridge Intern Dashboard — Progress &amp; Task Tracker">
+  <meta property="og:description" content="Manage your 30-day internship journey, track task completion, and explore modern web frameworks.">
+  <meta property="og:image" content="images/hero-graphic.svg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Main External Stylesheet (Pure CSS3) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <!-- TechBridge Logo -->
+      <a href="index.html" class="logo-link" aria-label="TechBridge Homepage">
+        <img src="images/logo.png" alt="TechBridge Logo" class="logo-img">
+      </a>
+
+      <!-- Pure CSS Checkbox Toggle for Mobile Menu -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Toggle navigation menu">
+      
+      <!-- Hamburger Icon Label -->
+      <label for="nav-toggle" class="mobile-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Desktop & Mobile Navigation Menu -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <a href="index.html#home" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="programs.html" class="nav-link">Programs</a>
+        <a href="tasks.html" class="nav-link">Internship Tasks</a>
+        <a href="challenges.html" class="nav-link">Challenge Hub</a>
+        <a href="dashboard.html" class="nav-link active">Dashboard</a>
+        <a href="index.html#benefits" class="nav-link">Why Join</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="nav-cta">
+        <a href="form.html" class="btn btn-primary" id="nav-apply-btn">
+          <span>Apply Now</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 6.5rem; padding-bottom: 4rem;">
+    <div class="container">
+
+      <!-- ==========================================================================
+           1. WELCOME SECTION & INTERN PROFILE
+           ========================================================================== -->
+      <section class="dashboard-welcome-card glass-panel" aria-label="Intern Profile Welcome Card">
+        <div class="welcome-profile-info">
+          <div class="welcome-avatar" aria-hidden="true">
+            AJ
+          </div>
+          <div>
+            <div class="welcome-tags-row">
+              <span class="intern-track-badge">Web Development Intern</span>
+              <span class="intern-status-badge">
+                <span class="live-indicator-dot"></span>
+                <span>Status: In Progress</span>
+              </span>
+            </div>
+            <h1 class="welcome-heading">Welcome back, <span class="text-gradient">Alex Johnson</span></h1>
+            <p class="welcome-subtext">
+              TechBridge 30-Day Practical Internship • Cohort 2026 • <strong>Day 19 of 30</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="welcome-actions">
+          <a href="challenges.html" class="btn btn-secondary" style="padding: 0.65rem 1.25rem; font-size: 0.85rem;">
+            <span>Challenge Hub</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+          <a href="tasks.html" class="btn btn-primary" style="padding: 0.65rem 1.25rem; font-size: 0.85rem;">
+            <span>Two-Track Roadmap</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           2. INTERNSHIP PROGRESS SECTION
+           ========================================================================== -->
+      <section class="dashboard-progress-section" aria-label="Internship Progress Metrics">
+        
+        <!-- 4 Metric Cards -->
+        <div class="dashboard-metrics-grid">
+          
+          <div class="metric-card glass-panel">
+            <div class="metric-icon-box metric-icon-total">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <div>
+              <div class="metric-value" id="stat-total-tasks">8</div>
+              <div class="metric-label">Total Tasks</div>
+            </div>
+          </div>
+
+          <div class="metric-card glass-panel">
+            <div class="metric-icon-box metric-icon-completed">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div>
+              <div class="metric-value text-gradient" id="stat-completed-tasks">5</div>
+              <div class="metric-label">Completed</div>
+            </div>
+          </div>
+
+          <div class="metric-card glass-panel">
+            <div class="metric-icon-box metric-icon-remaining">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <div>
+              <div class="metric-value" id="stat-remaining-tasks">3</div>
+              <div class="metric-label">Remaining</div>
+            </div>
+          </div>
+
+          <div class="metric-card glass-panel">
+            <div class="metric-icon-box metric-icon-percent">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2v10l7.5 4.5"></path></svg>
+            </div>
+            <div>
+              <div class="metric-value" id="stat-progress-percentage">63%</div>
+              <div class="metric-label">Progress Rate</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Visual Progress Bar Card -->
+        <div class="progress-bar-card glass-panel">
+          <div class="progress-header-row">
+            <div class="progress-title-wrap">
+              <h2 class="progress-heading">Internship Progress</h2>
+              <span class="progress-ratio-text" id="progress-ratio-text">5 / 8 Tasks Completed</span>
+            </div>
+            <span class="progress-remaining-text" id="progress-remaining-text">3 Tasks Remaining</span>
+          </div>
+
+          <!-- Dynamic Bar -->
+          <div class="progress-track-wrapper" role="progressbar" aria-label="Internship Completion Percentage" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100">
+            <div class="dashboard-progress-bar" id="dashboard-progress-bar" style="width: 63%;"></div>
+          </div>
+
+          <div class="progress-milestones-row">
+            <span>Day 1 (Start)</span>
+            <span>Day 8 (Mid-Phase 1)</span>
+            <span>Day 15 (Midway)</span>
+            <span>Day 22 (Advanced)</span>
+            <span>Day 26 (Capstone)</span>
+          </div>
+        </div>
+
+        <!-- Celebration Banner (Shown when 100% of tasks are completed) -->
+        <div class="celebration-banner glass-panel" id="celebration-banner" style="display: none;">
+          <h3 class="celebration-title">🎉 Congratulations! You have completed all 8 tasks!</h3>
+          <p class="celebration-desc">
+            You have successfully finished the TechBridge practical curriculum. Prepare your project links for the final Capstone evaluation.
+          </p>
+        </div>
+
+      </section>
+
+      <!-- ==========================================================================
+           3. TASK TRACKER SECTION (Tasks 1–8)
+           ========================================================================== -->
+      <section class="dashboard-tasks-section" id="task-tracker" aria-label="Internship Tasks Tracker">
+        
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <div class="section-tag">Interactive Task Tracker</div>
+          <h2 class="section-title">Manage Your <span class="text-gradient">8 Practical Tasks</span></h2>
+          <p class="section-subtitle">
+            Click "Mark as Completed" to update your progress in real time, or click "View Task" for detailed deliverables.
+          </p>
+        </div>
+
+        <!-- Task Filtering Controls -->
+        <div class="dashboard-tasks-controls">
+          <div class="task-filter-pills" role="tablist" aria-label="Filter tasks by completion status">
+            <button type="button" class="task-filter-btn active" data-filter="all" role="tab" aria-selected="true">
+              <span>All Tasks</span>
+              <span class="filter-count-badge" id="count-all">8</span>
+            </button>
+            <button type="button" class="task-filter-btn" data-filter="Completed" role="tab" aria-selected="false">
+              <span>Completed</span>
+              <span class="filter-count-badge" id="count-completed">5</span>
+            </button>
+            <button type="button" class="task-filter-btn" data-filter="In Progress" role="tab" aria-selected="false">
+              <span>In Progress</span>
+              <span class="filter-count-badge" id="count-inprogress">1</span>
+            </button>
+            <button type="button" class="task-filter-btn" data-filter="Not Started" role="tab" aria-selected="false">
+              <span>Not Started</span>
+              <span class="filter-count-badge" id="count-notstarted">2</span>
+            </button>
+          </div>
+
+          <button type="button" class="btn-reset-tasks" id="reset-tasks-btn" title="Reset tracking data back to default">
+            ↺ Reset Progress Defaults
+          </button>
+        </div>
+
+        <!-- Dynamic Tasks Grid populated via dashboard.js -->
+        <div class="dashboard-tasks-grid" id="dashboard-tasks-grid">
+          <!-- Injected dynamically via dashboard.js -->
+        </div>
+
+      </section>
+
+      <!-- ==========================================================================
+           4. CONNECT TASK 5: CHALLENGE HUB
+           ========================================================================== -->
+      <section class="challenge-hub-connect-section">
+        <div class="challenge-hub-connect-box glass-panel">
+          <div class="hub-connect-left">
+            <div class="hub-connect-icon">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="intern-track-badge" style="margin-bottom: 0.35rem; display: inline-block;">Task 5 Integration</div>
+              <h3 class="hub-connect-title">TechBridge Challenge Hub</h3>
+              <p class="hub-connect-desc">
+                Want extra hands-on practice? Explore <strong>20 practical challenges</strong> spanning the 30-day internship period across Data Analytics and Web Development.
+              </p>
+            </div>
+          </div>
+
+          <a href="challenges.html" class="btn btn-primary" style="padding: 0.9rem 1.85rem; white-space: nowrap;">
+            <span>Explore Challenges →</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           5. MODERN WEB TECHNOLOGIES SECTION
+           ========================================================================== -->
+      <section class="tech-explorer-section" id="modern-tech" aria-label="Modern Web Technologies Explorer">
+        
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <div class="section-tag">Modern Web Technologies</div>
+          <h2 class="section-title">Beyond the Basics: <span class="text-gradient">Frameworks &amp; Architecture</span></h2>
+          <p class="section-subtitle">
+            Understand how modern production web platforms are built using advanced frontend frameworks and backend systems.
+          </p>
+        </div>
+
+        <!-- Interactive Switcher Buttons -->
+        <div style="text-align: center;">
+          <div class="tech-tabs-nav" role="tablist" aria-label="Modern web technology switcher">
+            <button type="button" class="tech-tab-btn active" data-tech="nextjs" role="tab" aria-selected="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+              <span>Next.js</span>
+            </button>
+            <button type="button" class="tech-tab-btn" data-tech="vue" role="tab" aria-selected="false">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 8.5 12 15 2 8.5 12 2"></polygon><polygon points="12 15 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 15"></polygon></svg>
+              <span>Vue.js</span>
+            </button>
+            <button type="button" class="tech-tab-btn" data-tech="angular" role="tab" aria-selected="false">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 7 12 12 22 17 12 22 7 12 2"></polygon></svg>
+              <span>Angular</span>
+            </button>
+            <button type="button" class="tech-tab-btn" data-tech="backend" role="tab" aria-selected="false">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+              <span>Backend Development</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Tech Display Panel populated via dashboard.js -->
+        <div class="tech-display-panel glass-panel" id="tech-display-panel" role="tabpanel">
+          <!-- Injected dynamically via dashboard.js -->
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       6. TASK DETAILS MODAL DIALOG
+       ========================================================================== -->
+  <div class="modal-overlay" id="task-details-modal" role="dialog" aria-modal="true" aria-labelledby="modal-task-title">
+    <div class="modal-backdrop" id="task-modal-backdrop"></div>
+    <div class="modal-dialog">
+      <button type="button" class="modal-close-btn" id="task-modal-close-btn" aria-label="Close task details">
+        &times;
+      </button>
+      <div id="task-modal-body">
+        <!-- Injected dynamically via dashboard.js when View Task is clicked -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       7. FOOTER & OFFICIAL CONTACT
+       ========================================================================== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Footer Column 1: Brand Info -->
+        <div class="footer-brand">
+          <a href="index.html" aria-label="TechBridge Home">
+            <img src="images/logo.png" alt="TechBridge Logo" style="height: 64px; width: auto;">
+          </a>
+          <p>
+            <strong>TechBridge</strong> by <strong>Baselink Services Limited</strong>.<br>
+            Bridging Learning to Real-World Experience.
+          </p>
+        </div>
+
+        <!-- Footer Column 2: Quick Links -->
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About TechBridge</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="tasks.html">Internship Roadmap</a></li>
+            <li><a href="challenges.html">Challenge Hub</a></li>
+            <li><a href="dashboard.html">Intern Dashboard</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Column 3: Internship Tracks -->
+        <div>
+          <h4 class="footer-col-title">Programs</h4>
+          <ul class="footer-links">
+            <li><a href="programs.html#data-analytics-detail">Data Analytics</a></li>
+            <li><a href="programs.html#web-dev-detail">Web Development</a></li>
+            <li><a href="challenges.html">Challenge Hub</a></li>
+            <li><a href="form.html">Application Form</a></li>
+            <li><a href="index.html#community">WhatsApp Group</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Column 4: Official Contact -->
+        <div>
+          <h4 class="footer-col-title">Official Contact</h4>
+          <div class="footer-contact-box">
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">Have questions or inquiries?</p>
+            <a href="mailto:techbridgebaslink@gmail.com" class="footer-email-link" aria-label="Send email to techbridgebaslink@gmail.com">
+              <div class="email-icon-badge">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <span class="email-address-text">techbridgebaslink@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 TechBridge by Baselink Services Limited. All rights reserved.
+        </div>
+        <div>
+          Task 6 — TechBridge Intern Dashboard
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       8. JAVASCRIPT: Dynamic Intern Dashboard Engine
+       ========================================================================== -->
+  <script src="dashboard.js" defer></script>
+</body>
+</html>
