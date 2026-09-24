@@ -1,0 +1,6 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/chigozirim007/techbridge-backend.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/chigozirim007/techbridge-frontend.git
