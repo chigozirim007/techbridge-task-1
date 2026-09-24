@@ -282,9 +282,9 @@ const modernTechnologiesData = {
 // ============================================================================
 // 3. API CONFIGURATION & STATE MANAGEMENT
 // ============================================================================
-const API_BASE_URL = (window.location.port === '3000' || window.location.hostname === 'localhost')
-  ? `${window.location.protocol === 'file:' ? 'http:' : window.location.protocol}//localhost:3000/api`
-  : 'http://localhost:3000/api';
+const API_BASE_URL = window.location.protocol === 'file:'
+  ? 'http://localhost:3000/api'
+  : `${window.location.origin}/api`;
 
 const STORAGE_KEY = 'techbridge_intern_tasks_v1';
 
@@ -363,14 +363,17 @@ async function checkApiHealth() {
   try {
     const res = await fetch(`${API_BASE_URL}/health`, { method: 'GET', cache: 'no-cache' });
     if (res.ok) {
+      const data = await res.json().catch(() => ({}));
       isBackendOnline = true;
+      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      const labelText = isLocal ? `Port ${data.port || 3000}` : 'Cloud Live';
       if (badge) {
         badge.className = 'backend-status-badge badge-connected';
-        if (badgeText) badgeText.textContent = 'Backend API: Connected (Port 3000)';
+        if (badgeText) badgeText.textContent = `Backend API: Connected (${labelText})`;
       }
       if (apiDocsBadge) {
         apiDocsBadge.className = 'backend-status-badge badge-connected';
-        if (apiDocsText) apiDocsText.textContent = 'Port 3000: Operational';
+        if (apiDocsText) apiDocsText.textContent = `${labelText}: Operational`;
       }
       return true;
     }

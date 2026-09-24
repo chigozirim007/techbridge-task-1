@@ -133,3 +133,38 @@ techbridge-task-1/
 - [x] **Storage Persistence**: Task statuses persist in `localStorage` across browser refreshes, with a working reset option.
 - [x] **Cross-Page Navigation**: All 6 pages (`index.html`, `programs.html`, `tasks.html`, `challenges.html`, `dashboard.html`, `form.html`) share unified navigation and footer links.
 - [x] **Responsive Design**: Tested and verified down to 400px minimum viewport width.
+- [x] **REST API Server**: Endpoints verified (`GET /api/health`, `GET /api/tasks`, `GET /api/tasks/:id`, `PUT /api/tasks/:id`).
+- [x] **Cloud Ready for Render**: Root `package.json` and `render.yaml` blueprint configured for zero-setup deployment.
+
+---
+
+## ☁️ How to Host on Render (Step-by-Step)
+
+The repository is pre-configured with a root [package.json](file:///c:/Users/nwoke/techbridge-task-1/package.json) and [render.yaml](file:///c:/Users/nwoke/techbridge-task-1/render.yaml) so that it deploys seamlessly to Render as a **Web Service**.
+
+### Option 1: Standard Web Service (Recommended)
+1. Go to [Render Dashboard](https://dashboard.render.com/) and sign in with GitHub.
+2. Click **New +** at the top right and select **Web Service**.
+3. Choose your repository: `chigozirim007/techbridge-task-1`.
+4. Configure the settings (most are auto-detected):
+   - **Name**: `techbridge-platform` (or any custom name)
+   - **Region**: Choose the closest region (e.g. Frankfurt, Oregon, Ohio)
+   - **Branch**: `main`
+   - **Root Directory**: *(Leave empty)*
+   - **Runtime**: `Node`
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm start`
+   - **Instance Type**: `Free`
+5. Click **Deploy Web Service**.
+6. Render will build and launch your full-stack app. Once complete, your live site URL will be:
+   - **Homepage**: `https://<your-service-name>.onrender.com/`
+   - **Intern Dashboard**: `https://<your-service-name>.onrender.com/dashboard.html`
+   - **Health Check**: `https://<your-service-name>.onrender.com/api/health`
+   - **REST API Tasks**: `https://<your-service-name>.onrender.com/api/tasks`
+
+### Option 2: Render Blueprint (1-Click)
+1. Click **New +** $\rightarrow$ **Blueprint**.
+2. Connect `chigozirim007/techbridge-task-1`.
+3. Render automatically reads `render.yaml` and provisions the Web Service with health check monitoring at `/api/health`.
+4. Click **Apply**.
+

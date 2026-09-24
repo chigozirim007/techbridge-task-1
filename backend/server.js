@@ -266,7 +266,7 @@ app.delete('/api/tasks/:id', (req, res) => {
 // START SERVER
 // ============================================================================
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log('====================================================');
   console.log(`🚀 TechBridge Task Management API running on port: ${PORT}`);
   console.log(`🌐 Base API URL: http://localhost:${PORT}/api/tasks`);
