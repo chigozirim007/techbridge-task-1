@@ -3498,6 +3498,302 @@ details.task-card[open] .faq-icon {
   }
 }
 
+/* ==========================================================================
+   20. Task 7 TechBridge Task Management API Styles
+   ========================================================================== */
+
+/* Backend API Status Indicator */
+.backend-status-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.25s ease;
+}
+
+.backend-status-badge.badge-connected {
+  color: var(--accent-green);
+  background: rgba(16, 208, 0, 0.12);
+  border: 1px solid rgba(16, 208, 0, 0.35);
+}
+
+.backend-status-badge.badge-offline {
+  color: #FB7185;
+  background: rgba(244, 63, 94, 0.12);
+  border: 1px solid rgba(244, 63, 94, 0.35);
+}
+
+.backend-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.badge-connected .backend-status-dot {
+  background: var(--accent-green);
+  box-shadow: 0 0 10px var(--accent-green);
+  animation: livePulse 2s infinite ease-in-out;
+}
+
+.badge-offline .backend-status-dot {
+  background: #FB7185;
+  box-shadow: 0 0 8px #FB7185;
+}
+
+/* Task Search Input Box */
+.task-search-wrap {
+  position: relative;
+  min-width: 240px;
+  flex-grow: 1;
+  max-width: 320px;
+}
+
+.task-search-input {
+  width: 100%;
+  padding: 0.55rem 1rem 0.55rem 2.4rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-full);
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.task-search-input:focus {
+  border-color: var(--accent-green);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 12px rgba(16, 208, 0, 0.2);
+}
+
+.task-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.task-search-wrap .search-icon {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* Loading State Box */
+.tasks-loading-state {
+  text-align: center;
+  padding: 3.5rem 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(11, 19, 43, 0.85) 100%);
+  margin-bottom: 3rem;
+}
+
+.loading-spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: var(--accent-green);
+  border-radius: 50%;
+  margin: 0 auto 1.25rem auto;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.tasks-loading-state h4 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.35rem;
+}
+
+.tasks-loading-state p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Error State Box */
+.tasks-error-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(244, 63, 94, 0.35);
+  background: linear-gradient(135deg, rgba(30, 15, 25, 0.9) 0%, rgba(20, 10, 18, 0.85) 100%);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+  margin-bottom: 3rem;
+}
+
+.error-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.tasks-error-state h4 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+}
+
+.tasks-error-state p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+  line-height: 1.6;
+}
+
+.tasks-error-state code {
+  color: #38BDF8;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+  font-family: 'Fira Code', monospace;
+}
+
+.error-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* API Endpoints Reference Card */
+.api-docs-section {
+  margin-bottom: 3.5rem;
+}
+
+.api-docs-card {
+  padding: 2.25rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(11, 19, 43, 0.9) 100%);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.api-docs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.api-docs-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.25rem;
+}
+
+.api-docs-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.api-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.api-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.api-table th {
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.api-table td {
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+}
+
+.api-table tr:last-child td {
+  border-bottom: none;
+}
+
+.api-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.api-table code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.825rem;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.badge-method {
+  display: inline-block;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.725rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  min-width: 60px;
+}
+
+.badge-get {
+  color: #38BDF8;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.badge-put {
+  color: #FBBF24;
+  background: rgba(251, 191, 36, 0.15);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+}
+
+.badge-post {
+  color: #10D000;
+  background: rgba(16, 208, 0, 0.15);
+  border: 1px solid rgba(16, 208, 0, 0.35);
+}
+
+.badge-delete {
+  color: #FB7185;
+  background: rgba(244, 63, 94, 0.15);
+  border: 1px solid rgba(244, 63, 94, 0.35);
+}
+
+@media (max-width: 768px) {
+  .api-docs-card {
+    padding: 1.5rem;
+  }
+  .task-search-wrap {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+
 
 
 

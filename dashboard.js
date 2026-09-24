@@ -280,14 +280,47 @@ const modernTechnologiesData = {
 };
 
 // ============================================================================
-// 3. STATE MANAGEMENT & LOCAL STORAGE
+// 3. API CONFIGURATION & STATE MANAGEMENT
 // ============================================================================
+const API_BASE_URL = (window.location.port === '3000' || window.location.hostname === 'localhost')
+  ? `${window.location.protocol === 'file:' ? 'http:' : window.location.protocol}//localhost:3000/api`
+  : 'http://localhost:3000/api';
+
 const STORAGE_KEY = 'techbridge_intern_tasks_v1';
 
-// Load saved tasks from localStorage or initialize with defaults
 let tasksList = loadTasksFromStorage();
 let activeFilter = 'all'; // 'all' | 'Completed' | 'In Progress' | 'Not Started'
 let activeTechKey = 'nextjs';
+let isBackendOnline = false;
+let searchQuery = '';
+
+/**
+ * Normalizes task object from backend API or local dataset to consistent model
+ */
+function normalizeTask(t) {
+  let statusFormatted = 'Not Started';
+  const s = (t.status || '').toLowerCase().trim();
+  if (s === 'completed') statusFormatted = 'Completed';
+  else if (s === 'in-progress' || s === 'in progress') statusFormatted = 'In Progress';
+
+  return {
+    id: t.id,
+    taskNumber: t.taskNumber || `TASK ${t.id}`,
+    taskBadge: t.taskBadge || `Task 0${t.id}`,
+    title: t.title || '',
+    day: t.day || `Day ${t.dayNumber || t.id}`,
+    dayNumber: t.dayNumber || t.id,
+    difficulty: t.difficulty || 'Beginner',
+    difficultyClass: t.difficultyClass || (t.difficulty && t.difficulty.toLowerCase().includes('intermediate') ? 'diff-intermediate' : 'diff-beginner'),
+    status: statusFormatted,
+    shortDesc: t.shortDesc || t.description || '',
+    objective: t.objective || t.shortDesc || t.description || '',
+    skills: Array.isArray(t.skills) ? t.skills : [],
+    deliverables: Array.isArray(t.deliverables) ? t.deliverables : [],
+    estimatedTime: t.estimatedTime || '4–5 hours',
+    expectedResult: t.expectedResult || ''
+  };
+}
 
 /**
  * Loads tasks list from localStorage with graceful fallback
@@ -298,13 +331,13 @@ function loadTasksFromStorage() {
     if (saved) {
       const parsed = JSON.parse(saved);
       if (Array.isArray(parsed) && parsed.length === 8) {
-        return parsed;
+        return parsed.map(normalizeTask);
       }
     }
   } catch (e) {
     console.warn('Could not read localStorage, loading initial tasks dataset:', e);
   }
-  return JSON.parse(JSON.stringify(initialTasksData));
+  return JSON.parse(JSON.stringify(initialTasksData)).map(normalizeTask);
 }
 
 /**
@@ -315,6 +348,81 @@ function saveTasksToStorage() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(tasksList));
   } catch (e) {
     console.warn('Could not write to localStorage:', e);
+  }
+}
+
+/**
+ * Pings /api/health to verify connectivity with Node.js/Express server on Port 3000
+ */
+async function checkApiHealth() {
+  const badge = document.getElementById('backend-status-badge');
+  const badgeText = document.getElementById('backend-status-text');
+  const apiDocsBadge = document.getElementById('api-docs-status-badge');
+  const apiDocsText = document.getElementById('api-docs-status-text');
+
+  try {
+    const res = await fetch(`${API_BASE_URL}/health`, { method: 'GET', cache: 'no-cache' });
+    if (res.ok) {
+      isBackendOnline = true;
+      if (badge) {
+        badge.className = 'backend-status-badge badge-connected';
+        if (badgeText) badgeText.textContent = 'Backend API: Connected (Port 3000)';
+      }
+      if (apiDocsBadge) {
+        apiDocsBadge.className = 'backend-status-badge badge-connected';
+        if (apiDocsText) apiDocsText.textContent = 'Port 3000: Operational';
+      }
+      return true;
+    }
+  } catch (err) {
+    // API is offline
+  }
+
+  isBackendOnline = false;
+  if (badge) {
+    badge.className = 'backend-status-badge badge-offline';
+    if (badgeText) badgeText.textContent = 'Backend API: Offline';
+  }
+  if (apiDocsBadge) {
+    apiDocsBadge.className = 'backend-status-badge badge-offline';
+    if (apiDocsText) apiDocsText.textContent = 'Offline (Check Server)';
+  }
+  return false;
+}
+
+/**
+ * Asynchronously loads tasks from backend REST API with loading indicator and error recovery
+ */
+async function fetchTasksFromApi() {
+  const loadingEl = document.getElementById('tasks-loading-state');
+  const errorEl = document.getElementById('tasks-error-state');
+
+  if (loadingEl) loadingEl.style.display = 'block';
+  if (errorEl) errorEl.style.display = 'none';
+  if (tasksGridEl) tasksGridEl.style.display = 'none';
+
+  try {
+    const online = await checkApiHealth();
+    if (!online) throw new Error('Backend server is offline');
+
+    const res = await fetch(`${API_BASE_URL}/tasks`, { method: 'GET', cache: 'no-cache' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+    const json = await res.json();
+    if (json.success && Array.isArray(json.data)) {
+      tasksList = json.data.map(normalizeTask);
+      saveTasksToStorage();
+    }
+
+    if (loadingEl) loadingEl.style.display = 'none';
+    if (tasksGridEl) tasksGridEl.style.display = 'grid';
+    updateProgressMetrics();
+    renderTasksGrid();
+  } catch (err) {
+    console.warn('Backend API unavailable, displaying error / offline state:', err.message);
+    if (loadingEl) loadingEl.style.display = 'none';
+    if (errorEl) errorEl.style.display = 'block';
+    if (tasksGridEl) tasksGridEl.style.display = 'none';
   }
 }
 
@@ -413,11 +521,24 @@ function updateFilterCounters(total, completed, remaining) {
 // ============================================================================
 
 /**
- * Returns filtered list of tasks based on active filter
+ * Returns filtered list of tasks based on active filter tab and search query
  */
 function getFilteredTasks() {
-  if (activeFilter === 'all') return tasksList;
-  return tasksList.filter(task => task.status === activeFilter);
+  let filtered = tasksList;
+  if (activeFilter !== 'all') {
+    filtered = filtered.filter(task => task.status === activeFilter);
+  }
+  if (searchQuery) {
+    const q = searchQuery.toLowerCase();
+    filtered = filtered.filter(task => {
+      const titleMatch = (task.title || '').toLowerCase().includes(q);
+      const descMatch = (task.shortDesc || '').toLowerCase().includes(q);
+      const taskNumMatch = (task.taskNumber || '').toLowerCase().includes(q);
+      const skillsMatch = (task.skills || []).some(s => s.toLowerCase().includes(q));
+      return titleMatch || descMatch || taskNumMatch || skillsMatch;
+    });
+  }
+  return filtered;
 }
 
 /**
@@ -536,40 +657,80 @@ function renderTasksGrid() {
 
 /**
  * Toggles a task status interactively:
- * If Completed -> switches to In Progress
- * If In Progress -> switches to Completed
- * If Not Started -> switches to In Progress
+ * Sends asynchronous PUT request to /api/tasks/:id if backend is online,
+ * and maintains local fallback & localStorage synchronization.
  */
-function toggleTaskStatus(taskId) {
+async function toggleTaskStatus(taskId) {
   const task = tasksList.find(t => t.id === taskId);
   if (!task) return;
 
+  let nextStatus = 'In Progress';
   if (task.status === 'Completed') {
-    task.status = 'In Progress';
+    nextStatus = 'In Progress';
   } else if (task.status === 'In Progress') {
-    task.status = 'Completed';
+    nextStatus = 'Completed';
   } else {
-    task.status = 'Completed'; // Marking Not Started jumps directly to Completed when clicked
+    nextStatus = 'Completed';
   }
 
-  // Save to localStorage
-  saveTasksToStorage();
+  const backendStatus = nextStatus === 'In Progress' ? 'in-progress' : (nextStatus === 'Completed' ? 'completed' : 'not-started');
 
-  // Re-calculate progress and re-render without page reload
+  if (isBackendOnline) {
+    try {
+      const res = await fetch(`${API_BASE_URL}/tasks/${taskId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status: backendStatus })
+      });
+
+      if (res.ok) {
+        const json = await res.json();
+        console.log(`[API PUT Success] Task ${taskId} updated:`, json);
+        task.status = nextStatus;
+        saveTasksToStorage();
+        updateProgressMetrics();
+        renderTasksGrid();
+        return;
+      }
+    } catch (err) {
+      console.warn('[API PUT Error] Could not sync with backend, updating locally:', err.message);
+    }
+  }
+
+  // Local fallback
+  task.status = nextStatus;
+  saveTasksToStorage();
   updateProgressMetrics();
   renderTasksGrid();
 }
 
 // ============================================================================
-// 7. TASK DETAILS MODAL
+// 7. TASK DETAILS MODAL (FETCH SINGLE TASK)
 // ============================================================================
 
 /**
- * Opens task details modal dialog
+ * Opens task details modal dialog.
+ * Fetches fresh task details from GET /api/tasks/:id if backend is online.
  */
-function openTaskModal(taskId) {
-  const task = tasksList.find(t => t.id === taskId);
-  if (!task || !taskModal || !modalBodyContent) return;
+async function openTaskModal(taskId) {
+  let task = tasksList.find(t => t.id === taskId);
+  if (!taskModal || !modalBodyContent) return;
+
+  if (isBackendOnline) {
+    try {
+      const res = await fetch(`${API_BASE_URL}/tasks/${taskId}`);
+      if (res.ok) {
+        const json = await res.json();
+        if (json.success && json.data) {
+          task = normalizeTask(json.data);
+        }
+      }
+    } catch (err) {
+      console.warn('[API GET Single Task Error] Using cached task data:', err.message);
+    }
+  }
+
+  if (!task) return;
 
   const config = getStatusBadgeConfig(task.status);
   const skillsHtml = task.skills.map(s => `<span class="skill-tag">${s}</span>`).join('');
@@ -633,8 +794,8 @@ function openTaskModal(taskId) {
   // Modal internal buttons
   const modalToggleBtn = modalBodyContent.querySelector('.btn-modal-status-toggle');
   if (modalToggleBtn) {
-    modalToggleBtn.addEventListener('click', () => {
-      toggleTaskStatus(task.id);
+    modalToggleBtn.addEventListener('click', async () => {
+      await toggleTaskStatus(task.id);
       openTaskModal(task.id); // Refresh modal view
     });
   }
@@ -752,12 +913,59 @@ function setupDashboardEvents() {
     });
   });
 
-  // Reset tasks button (resets back to initial state in storage)
+  // Task Search Box (Real-time live filtering)
+  const searchInput = document.getElementById('task-search-input');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim();
+      renderTasksGrid();
+    });
+  }
+
+  // Retry API Connection button (in Error State box)
+  const retryBtn = document.getElementById('retry-api-btn');
+  if (retryBtn) {
+    retryBtn.addEventListener('click', () => {
+      fetchTasksFromApi();
+    });
+  }
+
+  // Continue with Local Data button (in Error State box)
+  const useLocalBtn = document.getElementById('use-local-data-btn');
+  if (useLocalBtn) {
+    useLocalBtn.addEventListener('click', () => {
+      const errorEl = document.getElementById('tasks-error-state');
+      if (errorEl) errorEl.style.display = 'none';
+      if (tasksGridEl) tasksGridEl.style.display = 'grid';
+      tasksList = loadTasksFromStorage();
+      updateProgressMetrics();
+      renderTasksGrid();
+    });
+  }
+
+  // Reset tasks button (resets back to initial state in storage and syncs to API if online)
   if (resetTasksBtn) {
-    resetTasksBtn.addEventListener('click', () => {
+    resetTasksBtn.addEventListener('click', async () => {
       if (confirm('Are you sure you want to reset your task tracking progress back to defaults?')) {
-        tasksList = JSON.parse(JSON.stringify(initialTasksData));
+        tasksList = JSON.parse(JSON.stringify(initialTasksData)).map(normalizeTask);
         saveTasksToStorage();
+
+        // If backend is online, sync reset statuses to API
+        if (isBackendOnline) {
+          try {
+            await Promise.all(tasksList.map(t => {
+              const backendStatus = t.status === 'In Progress' ? 'in-progress' : (t.status === 'Completed' ? 'completed' : 'not-started');
+              return fetch(`${API_BASE_URL}/tasks/${t.id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ status: backendStatus })
+              });
+            }));
+          } catch (e) {
+            console.warn('Could not sync all reset tasks to backend:', e);
+          }
+        }
+
         updateProgressMetrics();
         renderTasksGrid();
       }
@@ -781,12 +989,16 @@ function setupDashboardEvents() {
       closeTaskModal();
     }
   });
+
+  // Periodic health check every 10 seconds for real-time indicator
+  setInterval(() => {
+    checkApiHealth();
+  }, 10000);
 }
 
 // Initialize on DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
   setupDashboardEvents();
-  updateProgressMetrics();
-  renderTasksGrid();
   switchTechnology('nextjs'); // Default tech tab
+  fetchTasksFromApi(); // Asynchronously fetch from Backend API on Port 3000
 });

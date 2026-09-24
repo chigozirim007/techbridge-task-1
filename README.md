@@ -1,15 +1,40 @@
-# TechBridge Platform — Tasks 1, 2, 3, 4, 5 & 6
+# TechBridge Platform — Tasks 1, 2, 3, 4, 5, 6 & 7
 
 **Organization**: TechBridge by Baselink Services Limited  
 **Tagline**: Bridging Learning to Real-World Experience  
-**Tech Stack**: HTML5 + CSS3 + Pure Vanilla JavaScript (ES6+, Zero Frameworks)  
+**Tech Stack**: HTML5 + CSS3 + Pure Vanilla JavaScript (Frontend) • Node.js + Express.js + JSON Persistence (Backend API)  
 **Official Application Form**: [TechBridge Internship Application Form](https://forms.gle/8EbdSy5ttGfLZfjv5?utm_source=chatgpt.com)  
 
 ---
 
-## 📝 Developer Note (Task 6: Interactive Intern Dashboard)
+## 📝 Developer Note (Task 7: Build a TechBridge Task Management API)
 
-In **Task 6**, I developed the **TechBridge Intern Dashboard** (`dashboard.html` & `dashboard.js`), transitioning the platform into a functional student learning management portal.
+In **Task 7**, I engineered a dedicated **Node.js & Express.js REST API Server** (`backend/server.js`) backed by JSON storage (`backend/data/tasks.json`) and connected it to the **TechBridge Intern Dashboard** (`dashboard.html` & `dashboard.js`).
+
+This connects the frontend UI directly to a live server backend, demonstrating how data flows from Client → Server → Storage.
+
+### Task 7 Highlights:
+1. **Node.js & Express REST API Backend** (`backend/server.js`):
+   - Configured on Port 3000 with CORS middleware enabled for seamless client communication.
+   - `GET /api/health` — System health check reporting server status, port, and timestamp.
+   - `GET /api/tasks` — Retrieves all 8 official TechBridge internship tasks.
+   - `GET /api/tasks/:id` — Retrieves detailed specifications for a specific task.
+   - `PUT /api/tasks/:id` — Updates task status (`completed`, `in-progress`, `not-started`) and persists to `tasks.json`.
+   - `POST /api/tasks` & `DELETE /api/tasks/:id` — Extensible endpoints for full CRUD operations.
+   - Static asset hosting: Can also serve the complete web application directly from `http://localhost:3000/`.
+2. **Real-Time Backend Status Badge**:
+   - Live visual indicator displaying `Backend API: Connected (Port 3000)` with a pulsing emerald dot when the Node server is active.
+   - Switches dynamically to `Backend API: Offline` with an amber/red dot if the server is stopped or unreachable.
+   - Periodic 10-second background heartbeat keeps connection status synchronized in real time.
+3. **Asynchronous Client Integration (`fetch()`)**:
+   - `fetchTasksFromApi()` loads tasks dynamically on page load with an animated loading spinner.
+   - `toggleTaskStatus()` issues asynchronous `PUT` requests when tasks are marked as completed or in progress.
+   - `openTaskModal()` queries `GET /api/tasks/:id` to fetch fresh task deliverables and objectives.
+   - Graceful offline fallback: if backend is offline, alerts user with a clear error card, "Retry Connection" button, or option to continue with cached local storage.
+4. **Task Search Box**:
+   - Live filter input allowing interns to search across tasks by title, skill keywords, or milestone numbers.
+5. **REST API Documentation Card**:
+   - Clean reference table embedded directly in the dashboard displaying all endpoints, HTTP methods, and sample payloads.
 
 An intern can now track their real-time progress across all 8 practical internship tasks, interactively mark tasks as completed, inspect detailed milestone briefs in an accessible modal dialog, access the Challenge Hub from Task 5, and explore modern web frameworks (Next.js, Vue.js, Angular, and Backend Development).
 

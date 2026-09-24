@@ -89,6 +89,10 @@
                 <span class="live-indicator-dot"></span>
                 <span>Status: In Progress</span>
               </span>
+              <span class="backend-status-badge badge-connected" id="backend-status-badge" title="Connection status to Node/Express API on Port 3000">
+                <span class="backend-status-dot"></span>
+                <span id="backend-status-text">Backend API: Connected (Port 3000)</span>
+              </span>
             </div>
             <h1 class="welcome-heading">Welcome back, <span class="text-gradient">Alex Johnson</span></h1>
             <p class="welcome-subtext">
@@ -205,7 +209,7 @@
           </p>
         </div>
 
-        <!-- Task Filtering Controls -->
+        <!-- Task Filtering Controls & Search -->
         <div class="dashboard-tasks-controls">
           <div class="task-filter-pills" role="tablist" aria-label="Filter tasks by completion status">
             <button type="button" class="task-filter-btn active" data-filter="all" role="tab" aria-selected="true">
@@ -226,9 +230,42 @@
             </button>
           </div>
 
-          <button type="button" class="btn-reset-tasks" id="reset-tasks-btn" title="Reset tracking data back to default">
-            ↺ Reset Progress Defaults
-          </button>
+          <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+            <div class="task-search-wrap">
+              <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <input type="text" id="task-search-input" class="task-search-input" placeholder="Search tasks by title, skill..." aria-label="Search internship tasks">
+            </div>
+
+            <button type="button" class="btn-reset-tasks" id="reset-tasks-btn" title="Reset tracking data back to default">
+              ↺ Reset Progress Defaults
+            </button>
+          </div>
+        </div>
+
+        <!-- Loading State Indicator -->
+        <div class="tasks-loading-state" id="tasks-loading-state" style="display: none;">
+          <div class="loading-spinner"></div>
+          <h4>Connecting to Task Management API...</h4>
+          <p>Fetching internship tasks from <code>http://localhost:3000/api/tasks</code></p>
+        </div>
+
+        <!-- Error State Box -->
+        <div class="tasks-error-state" id="tasks-error-state" style="display: none;">
+          <div class="error-icon">⚠️</div>
+          <h4>Backend API Is Currently Offline</h4>
+          <p>
+            Unable to connect to the TechBridge Node/Express server on <code>localhost:3000</code>. Ensure the backend server is running via:
+            <br>
+            <code>cd backend &amp;&amp; npm start</code>
+          </p>
+          <div class="error-actions">
+            <button type="button" class="btn btn-primary" id="retry-api-btn" style="padding: 0.65rem 1.4rem; font-size: 0.85rem;">
+              <span>Retry Connection</span>
+            </button>
+            <button type="button" class="btn btn-secondary" id="use-local-data-btn" style="padding: 0.65rem 1.4rem; font-size: 0.85rem;">
+              <span>Continue with Local Data</span>
+            </button>
+          </div>
         </div>
 
         <!-- Dynamic Tasks Grid populated via dashboard.js -->
@@ -236,6 +273,75 @@
           <!-- Injected dynamically via dashboard.js -->
         </div>
 
+      </section>
+
+      <!-- ==========================================================================
+           3B. TECHBRIDGE TASK MANAGEMENT API DOCUMENTATION
+           ========================================================================== -->
+      <section class="api-docs-section" aria-label="REST API Endpoints Reference">
+        <div class="api-docs-card">
+          <div class="api-docs-header">
+            <div>
+              <div class="intern-track-badge" style="margin-bottom: 0.35rem; display: inline-block;">Task 7 Backend Integration</div>
+              <h3 class="api-docs-title">TechBridge Task Management REST API</h3>
+              <p class="api-docs-desc">Live endpoints served by Node.js &amp; Express on <code>http://localhost:3000</code> with JSON persistence.</p>
+            </div>
+            <div class="backend-status-badge badge-connected" id="api-docs-status-badge">
+              <span class="backend-status-dot"></span>
+              <span id="api-docs-status-text">Port 3000: Operational</span>
+            </div>
+          </div>
+          <div class="api-table-wrapper">
+            <table class="api-table">
+              <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>Endpoint</th>
+                  <th>Description</th>
+                  <th>Payload / Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="badge-method badge-get">GET</span></td>
+                  <td><code>/api/health</code></td>
+                  <td>System health check &amp; status</td>
+                  <td><code>{ status: "ok", port: 3000, timestamp }</code></td>
+                </tr>
+                <tr>
+                  <td><span class="badge-method badge-get">GET</span></td>
+                  <td><code>/api/tasks</code></td>
+                  <td>Retrieve all 8 internship tasks</td>
+                  <td><code>{ success: true, count: 8, data: [...] }</code></td>
+                </tr>
+                <tr>
+                  <td><span class="badge-method badge-get">GET</span></td>
+                  <td><code>/api/tasks/:id</code></td>
+                  <td>Retrieve single task by ID</td>
+                  <td><code>{ success: true, data: { id, title... } }</code></td>
+                </tr>
+                <tr>
+                  <td><span class="badge-method badge-put">PUT</span></td>
+                  <td><code>/api/tasks/:id</code></td>
+                  <td>Update task status &amp; persist to <code>tasks.json</code></td>
+                  <td><code>Body: { status: "completed" }</code></td>
+                </tr>
+                <tr>
+                  <td><span class="badge-method badge-post">POST</span></td>
+                  <td><code>/api/tasks</code></td>
+                  <td>Create a new internship task</td>
+                  <td><code>Body: { title, day, difficulty, ... }</code></td>
+                </tr>
+                <tr>
+                  <td><span class="badge-method badge-delete">DELETE</span></td>
+                  <td><code>/api/tasks/:id</code></td>
+                  <td>Delete task by ID</td>
+                  <td><code>{ success: true, message: "Task deleted" }</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </section>
 
       <!-- ==========================================================================

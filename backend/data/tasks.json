@@ -1,0 +1,209 @@
+[
+  {
+    "id": 1,
+    "taskNumber": "TASK 1",
+    "taskBadge": "Task 01",
+    "title": "Build the TechBridge Homepage",
+    "day": "Day 1",
+    "dayNumber": 1,
+    "difficulty": "Beginner",
+    "status": "completed",
+    "description": "Create the first version of the TechBridge website using structured HTML5 and CSS3 to establish the organization online presence.",
+    "objective": "Establish core brand identity, navigation bar, hero banner, value proposition sections, and responsive viewports for TechBridge by Baselink Services Limited.",
+    "skills": [
+      "HTML5 Semantic Markup",
+      "CSS3 Flexbox & Grid",
+      "Brand Typography",
+      "Mobile Responsive Layouts"
+    ],
+    "deliverables": [
+      "Structured index.html with header, hero banner, programs overview, benefits, and footer.",
+      "Custom style.css implementing CSS variables, color tokens, and button styles.",
+      "Mobile-friendly hamburger navigation menu functioning seamlessly across viewports."
+    ],
+    "estimatedTime": "4–5 hours",
+    "expectedResult": "A modern, responsive company homepage introducing TechBridge to prospective interns and partners."
+  },
+  {
+    "id": 2,
+    "taskNumber": "TASK 2",
+    "taskBadge": "Task 02",
+    "title": "Build the TechBridge Programs Experience",
+    "day": "Day 4",
+    "dayNumber": 4,
+    "difficulty": "Beginner",
+    "status": "completed",
+    "description": "Create a dedicated Programs experience presenting TechBridge available learning tracks in Data Analytics and Web Development.",
+    "objective": "Design and develop an engaging curriculum catalog that communicates syllabus modules, practical skills, and clear enrollment paths for prospective interns.",
+    "skills": [
+      "Information Architecture",
+      "Program Cards & Grids",
+      "Curriculum Breakdown",
+      "Multi-Page Navigation"
+    ],
+    "deliverables": [
+      "Dedicated programs.html page detailing Data Analytics and Web Development tracks.",
+      "Curriculum breakdown cards outlining module progression and practical outcomes.",
+      "Direct call-to-action buttons linking to application form and community channels."
+    ],
+    "estimatedTime": "4–5 hours",
+    "expectedResult": "An intuitive program discovery catalog helping visitors choose their ideal learning track."
+  },
+  {
+    "id": 3,
+    "taskNumber": "TASK 3",
+    "taskBadge": "Task 03",
+    "title": "Build the Internship Tasks Experience",
+    "day": "Day 8",
+    "dayNumber": 8,
+    "difficulty": "Beginner → Intermediate",
+    "status": "completed",
+    "description": "Create an interface that presents the TechBridge internship tasks and helps users understand the 30-day learning journey.",
+    "objective": "Map out the complete 30-day milestone timeline, task schedules, and difficulty progression from foundational basics to capstone project.",
+    "skills": [
+      "Roadmap Architecture",
+      "Timeline Indicators",
+      "Milestone Mapping",
+      "Expandable Details UX"
+    ],
+    "deliverables": [
+      "Dedicated tasks.html page with 30-day step-by-step milestone progression bar.",
+      "Interactive task cards with expandable milestone deliverables and skills lists.",
+      "Unified cross-page navigation linking Home, Programs, Tasks, and Application Form."
+    ],
+    "estimatedTime": "4–5 hours",
+    "expectedResult": "A transparent 30-day roadmap showing interns exactly what they will build from Day 1 to Day 26."
+  },
+  {
+    "id": 4,
+    "taskNumber": "TASK 4",
+    "taskBadge": "Task 04",
+    "title": "Build an Interactive Internship Roadmap",
+    "day": "Day 11",
+    "dayNumber": 11,
+    "difficulty": "Beginner → Intermediate",
+    "status": "completed",
+    "description": "Use JavaScript to allow visitors to switch between the Data Analytics and Web Development internship tracks without refreshing the page.",
+    "objective": "Introduce core JavaScript fundamentals (variables, arrays of objects, functions, event listeners, DOM manipulation) to render dual-track curricula dynamically.",
+    "skills": [
+      "Vanilla JavaScript (ES6+)",
+      "DOM Manipulation",
+      "Event Listeners",
+      "State Management",
+      "Dynamic Rendering"
+    ],
+    "deliverables": [
+      "Interactive track switcher buttons for [ Data Analytics ] and [ Web Development ].",
+      "Dynamic track switching updating the 8 tasks and timeline without page reload.",
+      "Prominent 'Currently Viewing' status card with live indicator dot."
+    ],
+    "estimatedTime": "4–5 hours",
+    "expectedResult": "A fluid, client-side interactive roadmap demonstrating pure JavaScript state and DOM control."
+  },
+  {
+    "id": 5,
+    "taskNumber": "TASK 5",
+    "taskBadge": "Task 05",
+    "title": "Build the TechBridge Challenge Hub",
+    "day": "Day 15",
+    "dayNumber": 15,
+    "difficulty": "Intermediate",
+    "status": "completed",
+    "description": "Create an interactive Challenge Hub with 20 practical challenges spanning 30 days, multi-level filtering, search, and detailed project brief modals.",
+    "objective": "Provide prospective and active interns with a hands-on challenge repository where they can filter challenges by track and difficulty, search by keyword, and inspect project briefs.",
+    "skills": [
+      "Multi-Level Filtering",
+      "Real-Time Search",
+      "Accessible Modal Dialogs",
+      "Dynamic Card Grids",
+      "Keyboard Navigation"
+    ],
+    "deliverables": [
+      "Dedicated challenges.html and challenges.js with 20 practical challenges across 30 days.",
+      "Track filters (All, Analytics, Web Dev) and Difficulty filters (All, Beginner, Intermediate, Advanced).",
+      "Interactive modal popup detailing challenge objectives, tools, deliverables, and estimated time."
+    ],
+    "estimatedTime": "4–5 hours",
+    "expectedResult": "An interactive challenge repository showcasing real-world projects that interns tackle during their 30 days."
+  },
+  {
+    "id": 6,
+    "taskNumber": "TASK 6",
+    "taskBadge": "Task 06",
+    "title": "Build the TechBridge Intern Dashboard",
+    "day": "Day 19",
+    "dayNumber": 19,
+    "difficulty": "Intermediate",
+    "status": "completed",
+    "description": "Build an interactive dashboard for interns to view their progress, toggle task completions, track percentage, and explore modern web technologies.",
+    "objective": "Create a centralized student portal that calculates completion metrics dynamically, allows task status updates without refresh, and introduces modern frameworks.",
+    "skills": [
+      "Dashboard UI Architecture",
+      "Real-time Calculations",
+      "LocalStorage Persistence",
+      "Interactive Technology Explorer",
+      "Component State"
+    ],
+    "deliverables": [
+      "Interactive dashboard.html and dashboard.js with real-time progress calculations.",
+      "Task status toggle buttons dynamically updating completed count, remaining count, and percentage.",
+      "Interactive Modern Web Technologies explorer covering Next.js, Vue, Angular, and Backend."
+    ],
+    "estimatedTime": "4–6 hours",
+    "expectedResult": "A functional, empowering intern workspace that mirrors professional learning management platforms."
+  },
+  {
+    "id": 7,
+    "taskNumber": "TASK 7",
+    "taskBadge": "Task 07",
+    "title": "Build a TechBridge Task Management API",
+    "day": "Day 22",
+    "dayNumber": 22,
+    "difficulty": "Intermediate",
+    "status": "in-progress",
+    "description": "Create a REST API with Node.js and Express to serve and update internship tasks, connecting frontend fetch() to backend data persistence.",
+    "objective": "Understand client-server architecture by creating endpoints (GET /api/tasks, GET /api/tasks/:id, PUT /api/tasks/:id) that power the intern dashboard dynamically.",
+    "skills": [
+      "Node.js & Express.js",
+      "REST API Design",
+      "HTTP Methods (GET, PUT, POST)",
+      "JSON File Persistence",
+      "CORS & Middleware",
+      "Loading & Error States"
+    ],
+    "deliverables": [
+      "Express server on port 3000 with CORS and JSON body parser.",
+      "GET /api/tasks and GET /api/tasks/:id returning structured JSON task data.",
+      "PUT /api/tasks/:id saving updated task status to backend data/tasks.json.",
+      "Frontend dashboard integrated with fetch(), loading indicator, and backend connection badge."
+    ],
+    "estimatedTime": "4–6 hours",
+    "expectedResult": "A functioning full-stack task management pipeline connecting the browser dashboard to an Express API."
+  },
+  {
+    "id": 8,
+    "taskNumber": "TASK 8",
+    "taskBadge": "Task 08",
+    "title": "Build the Complete TechBridge Internship Platform",
+    "day": "Day 26",
+    "dayNumber": 26,
+    "difficulty": "Intermediate",
+    "status": "not-started",
+    "description": "Combine all individual components created during the internship into a complete, unified TechBridge production platform.",
+    "objective": "Unify Homepage, Programs, Roadmap, Challenge Hub, Dashboard, Application, and API backend into an interconnected, optimized web platform.",
+    "skills": [
+      "Platform Architecture",
+      "Cross-Page State Harmony",
+      "Performance Optimization",
+      "SEO & Accessibility Compliance",
+      "Production Deployment"
+    ],
+    "deliverables": [
+      "Seamless multi-page platform with zero broken links and uniform styling tokens.",
+      "Optimized load times, clean asset organization, and responsive design down to 400px.",
+      "Complete end-to-end documentation ready for final capstone submission and deployment."
+    ],
+    "estimatedTime": "5–6 hours",
+    "expectedResult": "An enterprise-grade flagship web platform demonstrating full junior full-stack frontend capability."
+  }
+]
