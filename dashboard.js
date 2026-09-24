@@ -282,9 +282,21 @@ const modernTechnologiesData = {
 // ============================================================================
 // 3. API CONFIGURATION & STATE MANAGEMENT
 // ============================================================================
-const API_BASE_URL = window.location.protocol === 'file:'
-  ? 'http://localhost:3000/api'
-  : `${window.location.origin}/api`;
+const CUSTOM_API_KEY = 'techbridge_backend_url_v1';
+
+function getApiBaseUrl() {
+  const custom = localStorage.getItem(CUSTOM_API_KEY);
+  if (custom && custom.trim().length > 0) {
+    let clean = custom.trim().replace(/\/+$/, '');
+    if (!clean.endsWith('/api')) clean += '/api';
+    return clean;
+  }
+  return window.location.protocol === 'file:'
+    ? 'http://localhost:3000/api'
+    : `${window.location.origin}/api`;
+}
+
+let API_BASE_URL = getApiBaseUrl();
 
 const STORAGE_KEY = 'techbridge_intern_tasks_v1';
 
@@ -943,6 +955,26 @@ function setupDashboardEvents() {
       tasksList = loadTasksFromStorage();
       updateProgressMetrics();
       renderTasksGrid();
+    });
+  }
+
+  // Connect custom Render backend URL button (in Error State box)
+  const customUrlInput = document.getElementById('custom-backend-url');
+  const saveBackendUrlBtn = document.getElementById('save-backend-url-btn');
+
+  if (customUrlInput) {
+    const saved = localStorage.getItem(CUSTOM_API_KEY);
+    if (saved) customUrlInput.value = saved;
+  }
+
+  if (saveBackendUrlBtn && customUrlInput) {
+    saveBackendUrlBtn.addEventListener('click', () => {
+      const val = customUrlInput.value.trim();
+      if (val) {
+        localStorage.setItem(CUSTOM_API_KEY, val);
+        API_BASE_URL = getApiBaseUrl();
+        fetchTasksFromApi();
+      }
     });
   }
 

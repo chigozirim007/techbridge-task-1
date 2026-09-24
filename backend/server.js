@@ -71,6 +71,25 @@ function writeTasksToFile(tasks) {
 // ============================================================================
 
 /**
+ * Root Welcome Endpoint
+ * GET /
+ */
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    service: 'TechBridge Task Management REST API',
+    status: 'online',
+    version: '1.0.0',
+    endpoints: {
+      health: '/api/health',
+      tasks: '/api/tasks',
+      singleTask: '/api/tasks/:id'
+    },
+    documentation: 'See README.md for full REST API specifications'
+  });
+});
+
+/**
  * Health Check Endpoint
  * GET /api/health
  */

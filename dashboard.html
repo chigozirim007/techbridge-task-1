@@ -258,6 +258,13 @@
             <br>
             <code>cd backend &amp;&amp; npm start</code>
           </p>
+          <div style="margin: 1.25rem auto 1.5rem auto; max-width: 480px; text-align: left;">
+            <label for="custom-backend-url" style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-bottom: 0.4rem;">Connected to a cloud backend (e.g. Render)? Enter URL:</label>
+            <div style="display: flex; gap: 0.5rem;">
+              <input type="url" id="custom-backend-url" class="task-search-input" placeholder="https://your-api.onrender.com" style="border-radius: var(--radius-sm); font-size: 0.825rem; padding: 0.55rem 0.85rem;" aria-label="Custom Render Backend URL">
+              <button type="button" class="btn btn-primary" id="save-backend-url-btn" style="padding: 0.55rem 1rem; font-size: 0.825rem; white-space: nowrap;">Connect</button>
+            </div>
+          </div>
           <div class="error-actions">
             <button type="button" class="btn btn-primary" id="retry-api-btn" style="padding: 0.65rem 1.4rem; font-size: 0.85rem;">
               <span>Retry Connection</span>
