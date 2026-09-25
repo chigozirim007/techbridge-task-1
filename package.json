@@ -1,23 +1,14 @@
 {
   "name": "techbridge-task-1",
   "version": "1.0.0",
-  "description": "TechBridge Platform with Interactive Task Management REST API",
-  "main": "backend/server.js",
+  "description": "TechBridge Platform Frontend",
   "scripts": {
-    "start": "node backend/server.js",
-    "build": "cd backend && npm install",
-    "postinstall": "cd backend && npm install",
-    "dev": "node backend/server.js"
-  },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.21.2"
+    "build": "echo 'Static build complete'"
   },
   "keywords": [
     "techbridge",
     "internship",
-    "express",
-    "rest-api"
+    "frontend"
   ],
   "author": "TechBridge by Baselink Services Limited",
   "license": "ISC"
