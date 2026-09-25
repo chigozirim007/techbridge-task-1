@@ -283,6 +283,7 @@ const modernTechnologiesData = {
 // 3. API CONFIGURATION & STATE MANAGEMENT
 // ============================================================================
 const CUSTOM_API_KEY = 'techbridge_backend_url_v1';
+const DEFAULT_CLOUD_API = 'https://techbridge-backend-tm0z.onrender.com/api';
 
 function getApiBaseUrl() {
   const custom = localStorage.getItem(CUSTOM_API_KEY);
@@ -291,9 +292,10 @@ function getApiBaseUrl() {
     if (!clean.endsWith('/api')) clean += '/api';
     return clean;
   }
-  return window.location.protocol === 'file:'
-    ? 'http://localhost:3000/api'
-    : `${window.location.origin}/api`;
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    return 'http://localhost:3000/api';
+  }
+  return DEFAULT_CLOUD_API;
 }
 
 let API_BASE_URL = getApiBaseUrl();
