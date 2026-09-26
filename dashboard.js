@@ -366,7 +366,9 @@ function saveTasksToStorage() {
 }
 
 /**
- * Pings /api/health to verify connectivity with Node.js/Express server on Port 3000
+ * Pings /api/health to verify connectivity with the backend server.
+ * Retries up to 3 times with a 4-second delay to handle Render free-tier cold starts
+ * (server can take 30-60 seconds to wake up after inactivity).
  */
 async function checkApiHealth() {
   const badge = document.getElementById('backend-status-badge');
@@ -374,25 +376,43 @@ async function checkApiHealth() {
   const apiDocsBadge = document.getElementById('api-docs-status-badge');
   const apiDocsText = document.getElementById('api-docs-status-text');
 
-  try {
-    const res = await fetch(`${API_BASE_URL}/health`, { method: 'GET', cache: 'no-cache' });
-    if (res.ok) {
-      const data = await res.json().catch(() => ({}));
-      isBackendOnline = true;
-      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-      const labelText = isLocal ? `Port ${data.port || 3000}` : 'Cloud Live';
+  const MAX_RETRIES = 3;
+  const RETRY_DELAY_MS = 4000;
+
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      const res = await fetch(`${API_BASE_URL}/health`, { method: 'GET', cache: 'no-cache' });
+      if (res.ok) {
+        const data = await res.json().catch(() => ({}));
+        isBackendOnline = true;
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const labelText = isLocal ? `Port ${data.port || 3000}` : 'Cloud Live';
+        if (badge) {
+          badge.className = 'backend-status-badge badge-connected';
+          if (badgeText) badgeText.textContent = `Backend API: Connected (${labelText})`;
+        }
+        if (apiDocsBadge) {
+          apiDocsBadge.className = 'backend-status-badge badge-connected';
+          if (apiDocsText) apiDocsText.textContent = `${labelText}: Operational`;
+        }
+        return true;
+      }
+    } catch (err) {
+      // Attempt failed — may be a cold start
+    }
+
+    if (attempt < MAX_RETRIES) {
+      // Show "waking up" state between retries
       if (badge) {
-        badge.className = 'backend-status-badge badge-connected';
-        if (badgeText) badgeText.textContent = `Backend API: Connected (${labelText})`;
+        badge.className = 'backend-status-badge badge-offline';
+        if (badgeText) badgeText.textContent = `Backend API: Waking up... (${attempt}/${MAX_RETRIES})`;
       }
       if (apiDocsBadge) {
-        apiDocsBadge.className = 'backend-status-badge badge-connected';
-        if (apiDocsText) apiDocsText.textContent = `${labelText}: Operational`;
+        apiDocsBadge.className = 'backend-status-badge badge-offline';
+        if (apiDocsText) apiDocsText.textContent = `Waking up... (${attempt}/${MAX_RETRIES})`;
       }
-      return true;
+      await new Promise(r => setTimeout(r, RETRY_DELAY_MS));
     }
-  } catch (err) {
-    // API is offline
   }
 
   isBackendOnline = false;
